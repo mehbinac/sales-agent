@@ -6,7 +6,8 @@ from app.api.main import app
 @pytest.fixture
 def client():
     """Create a test client"""
-    return TestClient(app)
+    with TestClient(app) as client:
+        yield client
 
 
 def test_root_endpoint(client):

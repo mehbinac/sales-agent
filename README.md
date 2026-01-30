@@ -54,6 +54,7 @@ sales-agent/
 ### Prerequisites
 - Docker and Docker Compose installed
 - Or Python 3.10+ for local development
+- **Internet connection required for first run** (to download AI models from Hugging Face)
 
 ### Option 1: Using Docker (Recommended)
 
@@ -318,11 +319,23 @@ Edit `frontend/streamlit_app.py` to modify the user interface.
 ### Model Download Issues
 The first run downloads the LLM and embedding models from Hugging Face. This may take time depending on your connection.
 
+**Model sizes:**
+- Flan-T5 base model: ~900 MB
+- SentenceTransformers model: ~80 MB
+
+Models are cached after first download in `~/.cache/huggingface/`
+
 ### Memory Requirements
 The Flan-T5 base model requires approximately 1-2 GB of RAM. For lower memory environments, consider using a smaller model like `google/flan-t5-small`.
 
 ### API Connection Issues
 Ensure the API is running before starting the frontend. Check `http://localhost:8000/health` to verify the API is accessible.
+
+### Network Restrictions
+If running in an environment with restricted internet access:
+- Product search and recommendations will work normally (no models needed)
+- Semantic FAQ search and AI chat features will be unavailable until models are downloaded
+- The application gracefully degrades - core features remain functional
 
 ## Future Enhancements 🚀
 

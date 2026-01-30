@@ -26,20 +26,31 @@ app.add_middleware(
 )
 
 # Initialize services
-product_service = ProductService()
-search_service = SemanticSearchService()
+product_service = None
+search_service = None
 chat_agent = None  # Lazy load due to model size
 
 
 @app.on_event("startup")
 async def startup_event():
     """Initialize services on startup"""
-    global chat_agent
+    global product_service, search_service, chat_agent
     logger.info("Starting up application...")
+    
+    # Initialize product service (no model needed)
+    product_service = ProductService()
+    
+    # Initialize semantic search service (requires model download)
+    try:
+        search_service = SemanticSearchService()
+    except Exception as e:
+        logger.warning(f"Failed to initialize semantic search: {e}")
+    
+    # Initialize chat agent (requires model download)
     try:
         chat_agent = ChatAgentService()
     except Exception as e:
-        logger.error(f"Failed to initialize chat agent: {e}")
+        logger.warning(f"Failed to initialize chat agent: {e}")
 
 
 @app.get("/")
@@ -61,6 +72,8 @@ async def health_check():
 @app.get("/products", response_model=List[Product])
 async def get_products():
     """Get all products"""
+    if not product_service:
+        raise HTTPException(status_code=503, detail="Product service not initialized")
     try:
         products = product_service.get_all_products()
         return products
@@ -72,6 +85,8 @@ async def get_products():
 @app.get("/products/{product_id}", response_model=Product)
 async def get_product(product_id: int):
     """Get product by ID"""
+    if not product_service:
+        raise HTTPException(status_code=503, detail="Product service not initialized")
     product = product_service.get_product_by_id(product_id)
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
@@ -81,6 +96,8 @@ async def get_product(product_id: int):
 @app.post("/products/search", response_model=List[Product])
 async def search_products(request: SearchRequest):
     """Search products"""
+    if not product_service:
+        raise HTTPException(status_code=503, detail="Product service not initialized")
     try:
         products = product_service.search_products(
             query=request.query,
@@ -97,6 +114,8 @@ async def search_products(request: SearchRequest):
 @app.get("/categories", response_model=List[str])
 async def get_categories():
     """Get all product categories"""
+    if not product_service:
+        raise HTTPException(status_code=503, detail="Product service not initialized")
     try:
         categories = product_service.get_categories()
         return categories
@@ -108,6 +127,8 @@ async def get_categories():
 @app.post("/recommendations", response_model=List[Product])
 async def get_recommendations(request: RecommendationRequest):
     """Get product recommendations"""
+    if not product_service:
+        raise HTTPException(status_code=503, detail="Product service not initialized")
     try:
         recommendations = product_service.get_recommendations(
             product_id=request.product_id,
@@ -123,6 +144,8 @@ async def get_recommendations(request: RecommendationRequest):
 @app.get("/faqs", response_model=List[FAQ])
 async def get_faqs():
     """Get all FAQs"""
+    if not search_service:
+        raise HTTPException(status_code=503, detail="Search service not initialized")
     try:
         faqs = search_service.get_all_faqs()
         return faqs
@@ -134,6 +157,8 @@ async def get_faqs():
 @app.post("/faqs/search", response_model=List[FAQ])
 async def search_faqs(query: str, top_k: int = 3):
     """Search FAQs using semantic search"""
+    if not search_service:
+        raise HTTPException(status_code=503, detail="Search service not initialized")
     try:
         results = search_service.search_faqs(query, top_k)
         return [faq for faq, score in results]
