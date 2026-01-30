@@ -32,12 +32,12 @@ sales-agent/
 ## Tech Stack 🛠️
 
 ### AI/ML Components
-- **LangChain**: Orchestration framework for LLM applications
+- **LangChain**: Orchestration framework for LLM applications (v0.3.27)
 - **Hugging Face Transformers**: Open-source LLM (google/flan-t5-base)
 - **SentenceTransformers**: Semantic search with embeddings (all-MiniLM-L6-v2)
 
 ### Backend
-- **FastAPI**: High-performance async API framework
+- **FastAPI**: High-performance async API framework (v0.109.1 - security patched)
 - **Pydantic**: Data validation and settings management
 - **Python 3.10**: Core programming language
 
