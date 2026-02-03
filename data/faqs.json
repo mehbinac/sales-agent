@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What is your return policy?",
+    "answer": "We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Electronics have a 14-day return window. Refunds are processed within 5-7 business days after we receive the returned item."
+  },
+  {
+    "id": 2,
+    "question": "How long does shipping take?",
+    "answer": "Standard shipping takes 5-7 business days. Express shipping takes 2-3 business days. Orders are processed within 1-2 business days. Free shipping is available on orders over $50."
+  },
+  {
+    "id": 3,
+    "question": "Do you ship internationally?",
+    "answer": "Yes, we ship to over 50 countries worldwide. International shipping costs vary by destination and typically takes 10-15 business days. Customs fees may apply and are the responsibility of the customer."
+  },
+  {
+    "id": 4,
+    "question": "How can I track my order?",
+    "answer": "Once your order ships, you'll receive a tracking number via email. You can use this number on our website or the carrier's website to track your package in real-time."
+  },
+  {
+    "id": 5,
+    "question": "What payment methods do you accept?",
+    "answer": "We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and Shop Pay. All transactions are secure and encrypted."
+  },
+  {
+    "id": 6,
+    "question": "Do you offer warranty on products?",
+    "answer": "Most electronic products come with a 1-year manufacturer warranty. Some items may have extended warranty options available at checkout. Please check individual product pages for specific warranty information."
+  },
+  {
+    "id": 7,
+    "question": "How do I cancel my order?",
+    "answer": "Orders can be cancelled within 2 hours of placement by contacting our customer service team. After this window, the order may have already been processed for shipping and cannot be cancelled."
+  },
+  {
+    "id": 8,
+    "question": "Are your products authentic?",
+    "answer": "Yes, all our products are 100% authentic and sourced directly from authorized distributors and manufacturers. We guarantee the quality and authenticity of every item we sell."
+  },
+  {
+    "id": 9,
+    "question": "Do you offer discounts or promotions?",
+    "answer": "Yes, we regularly offer promotions and discounts. Sign up for our newsletter to receive exclusive deals, early access to sales, and special discount codes. We also have seasonal sales and clearance events."
+  },
+  {
+    "id": 10,
+    "question": "How can I contact customer support?",
+    "answer": "You can reach our customer support team via email at support@example.com, phone at 1-800-EXAMPLE, or live chat on our website. Our support hours are Monday-Friday 9am-6pm EST."
+  }
+]
