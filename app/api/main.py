@@ -10,6 +10,7 @@ from app.services.semantic_search import SemanticSearchService
 from app.services.chat_agent import ChatAgentService
 from app.utils.logger import get_logger
 from app.utils.config import APP_NAME
+import os
 
 logger = get_logger(__name__)
 
@@ -30,6 +31,10 @@ product_service = None
 search_service = None
 chat_agent = None  # Lazy load due to model size
 
+# Feature flags (default enabled)
+ENABLE_SEMANTIC_SEARCH = os.getenv("ENABLE_SEMANTIC_SEARCH", "true").lower() == "true"
+ENABLE_CHAT_AGENT = os.getenv("ENABLE_CHAT_AGENT", "true").lower() == "true"
+
 
 @app.on_event("startup")
 async def startup_event():
@@ -39,18 +44,32 @@ async def startup_event():
     
     # Initialize product service (no model needed)
     product_service = ProductService()
-    
-    # Initialize semantic search service (requires model download)
-    try:
-        search_service = SemanticSearchService()
-    except Exception as e:
-        logger.warning(f"Failed to initialize semantic search: {e}")
-    
-    # Initialize chat agent (requires model download)
-    try:
-        chat_agent = ChatAgentService()
-    except Exception as e:
-        logger.warning(f"Failed to initialize chat agent: {e}")
+
+
+def _ensure_search_service():
+    """Lazy initialize semantic search service"""
+    global search_service
+    if not ENABLE_SEMANTIC_SEARCH:
+        raise HTTPException(status_code=503, detail="Semantic search disabled")
+    if not search_service:
+        try:
+            search_service = SemanticSearchService()
+        except Exception as e:
+            logger.warning(f"Failed to initialize semantic search: {e}")
+            raise HTTPException(status_code=503, detail="Search service not initialized")
+
+
+def _ensure_chat_agent():
+    """Lazy initialize chat agent"""
+    global chat_agent
+    if not ENABLE_CHAT_AGENT:
+        raise HTTPException(status_code=503, detail="Chat agent disabled")
+    if not chat_agent:
+        try:
+            chat_agent = ChatAgentService()
+        except Exception as e:
+            logger.warning(f"Failed to initialize chat agent: {e}")
+            raise HTTPException(status_code=503, detail="Chat agent not initialized")
 
 
 @app.get("/")
@@ -144,9 +163,8 @@ async def get_recommendations(request: RecommendationRequest):
 @app.get("/faqs", response_model=List[FAQ])
 async def get_faqs():
     """Get all FAQs"""
-    if not search_service:
-        raise HTTPException(status_code=503, detail="Search service not initialized")
     try:
+        _ensure_search_service()
         faqs = search_service.get_all_faqs()
         return faqs
     except Exception as e:
@@ -157,9 +175,8 @@ async def get_faqs():
 @app.post("/faqs/search", response_model=List[FAQ])
 async def search_faqs(query: str, top_k: int = 3):
     """Search FAQs using semantic search"""
-    if not search_service:
-        raise HTTPException(status_code=503, detail="Search service not initialized")
     try:
+        _ensure_search_service()
         results = search_service.search_faqs(query, top_k)
         return [faq for faq, score in results]
     except Exception as e:
@@ -170,13 +187,8 @@ async def search_faqs(query: str, top_k: int = 3):
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     """Chat with the sales agent"""
-    if not chat_agent:
-        raise HTTPException(
-            status_code=503, 
-            detail="Chat agent is not initialized yet"
-        )
-    
     try:
+        _ensure_chat_agent()
         response, products, faqs = chat_agent.chat(
             message=request.message,
             history=request.conversation_history
