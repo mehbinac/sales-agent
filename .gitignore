@@ -56,3 +56,6 @@ Thumbs.db
 models/
 .cache/
 huggingface/
+
+
+*.venv/
