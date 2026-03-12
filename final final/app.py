@@ -44,16 +44,18 @@ def main():
             st.warning("Please enter a message.")
         else:
             with st.spinner("Calling Groq..."):
-                relevant_faqs, relevant_products = search(user_input, top_k=1)
+                relevant_faqs, faq_scores, relevant_products, product_scores = search(user_input, top_k=1)
 
                 faq_context = "\n".join([
                     f"Q: {faq['question']}\nA: {faq['answer']}"
                     for faq in relevant_faqs
                 ])
+                faq_scores_str = ", ".join([f"{score:.2f}" for score in faq_scores])
                 product_context = "\n".join([
                     f"Product: {product['name']}\nCategory: {product['category']}\nPrice Range: {product['price_range']}\nDescription: {product['description']}\nFeatures: {', '.join(product['features'])}\nIdeal For: {', '.join(product['ideal_for'])}\nUse Cases: {', '.join(product['use_cases'])}"
                     for product in relevant_products
                 ])
+                product_scores_str = ", ".join([f"{score:.2f}" for score in product_scores])
                 # Instead of appending system messages mid-conversation, create one combined context
                 combined_context = f"""Relevant FAQ information:
                 {faq_context}
@@ -82,7 +84,9 @@ def main():
                 log_interaction({
                     "user_input": user_input,
                     "faq_context": faq_context,
+                    "faq_scores": faq_scores_str,
                     "product_context": product_context,
+                    "product_scores": product_scores_str,
                     "assistant_reply": assistant_reply
                 })
 

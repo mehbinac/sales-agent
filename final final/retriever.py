@@ -25,19 +25,23 @@ def search(query, top_k=1, min_similarity=0.45):
     product_sorted_idx = product_similarities.argsort()[::-1]
 
     faq_context = []
+    faq_scores = []
     for i in faq_sorted_idx:
         if faq_similarities[i] < min_similarity:
             break
         faq_context.append(FAQS[i])
+        faq_scores.append(faq_similarities[i])
         if len(faq_context) >= top_k:
             break
 
     product_context = []
+    product_scores = []
     for i in product_sorted_idx:
         if product_similarities[i] < min_similarity:
             break
         product_context.append(PRODUCTS[i])
+        product_scores.append(product_similarities[i])
         if len(product_context) >= top_k:
             break
 
-    return faq_context, product_context
+    return faq_context, faq_scores, product_context, product_scores
