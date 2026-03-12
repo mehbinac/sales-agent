@@ -10,10 +10,10 @@ from faq_data import FAQS
 from product_data import PRODUCTS
 
 faq_questions = [faq["question"] for faq in FAQS]
-faq_embeddings = embed(faq_questions)
+faq_embeddings = np.array([embed(question) for question in faq_questions])
 
 product_names = [product["name"] for product in PRODUCTS]
-product_embeddings = embed(product_names)
+product_embeddings = np.array([embed(name) for name in product_names])
 
 def search(query, top_k=1, min_similarity=0.45):
     query_embedding = embed(query)

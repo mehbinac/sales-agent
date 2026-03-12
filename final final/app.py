@@ -4,6 +4,7 @@ from groq import Groq
 from dotenv import load_dotenv
 # from test_groq import test_groq
 from retriever import search
+from logger import log_interaction
 
 def main():
 
@@ -50,17 +51,18 @@ def main():
                     for faq in relevant_faqs
                 ])
                 product_context = "\n".join([
-                    f"Product: {product['name']}\nDescription: {product['description']}"
+                    f"Product: {product['name']}\nCategory: {product['category']}\nPrice Range: {product['price_range']}\nDescription: {product['description']}\nFeatures: {', '.join(product['features'])}\nIdeal For: {', '.join(product['ideal_for'])}\nUse Cases: {', '.join(product['use_cases'])}"
                     for product in relevant_products
                 ])
+                # Instead of appending system messages mid-conversation, create one combined context
+                combined_context = f"""Relevant FAQ information:
+                {faq_context}
+                
+                Relevant product information:
+                {product_context}"""
+                
                 st.session_state.messages.append(
-                    {"role": "system", "content": f"Relevant FAQ information:\n{faq_context}"},
-                )
-                st.session_state.messages.append(
-                    {"role": "system", "content": f"Relevant product information:\n{product_context}"},
-                )
-                st.session_state.messages.append(
-                    {"role": "user", "content": user_input}
+                    {"role": "user", "content": f"{combined_context}\n\nUser question: {user_input}"}
                 )
 
                 response = client.chat.completions.create(
@@ -75,6 +77,14 @@ def main():
                 )
                 st.subheader("Response")
                 st.write(assistant_reply)
+
+                # Log the interaction
+                log_interaction({
+                    "user_input": user_input,
+                    "faq_context": faq_context,
+                    "product_context": product_context,
+                    "assistant_reply": assistant_reply
+                })
 
 if __name__ == "__main__":
     main()

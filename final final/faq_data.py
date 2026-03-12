@@ -1,14 +1,93 @@
 FAQS = [
-    {
-        "question": "Do your cameras work at night?",
-        "answer": "Yes, our advanced and premium cameras include infrared night vision."
-    },
-    {
-        "question": "Can I monitor my home remotely?",
-        "answer": "Yes, all our smart systems include mobile app monitoring."
-    },
-    {
-        "question": "Do you offer installation support?",
-        "answer": "Yes, we provide guided setup and optional professional installation."
-    }
+
+{
+"id": "f1",
+"question": "Can I take these backpacks as carry-on luggage?",
+"answer": "Most of our travel backpacks are designed to meet airline carry-on size limits, especially models like the NomadLite Carry-On Backpack."
+},
+
+{
+"id": "f2",
+"question": "Are your suitcases TSA approved?",
+"answer": "Yes, many of our suitcases include TSA-approved locks so airport security can inspect luggage without damaging it."
+},
+
+{
+"id": "f3",
+"question": "Which backpack is best for digital nomads?",
+"answer": "The NomadLite Carry-On Backpack and JetSet Laptop Travel Bag are ideal for digital nomads because they include laptop compartments and organized storage."
+},
+
+{
+"id": "f4",
+"question": "Are your backpacks waterproof?",
+"answer": "Most backpacks use water-resistant materials that protect your belongings from light rain, though they are not fully waterproof."
+},
+
+{
+"id": "f5",
+"question": "Do the suitcases have spinner wheels?",
+"answer": "Yes, suitcases like GlobeTrek Pro and UltraLite Cabin Suitcase feature 360-degree spinner wheels for smooth movement."
+},
+
+{
+"id": "f6",
+"question": "What size backpack should I choose for a weekend trip?",
+"answer": "A 35–40 liter backpack like the NomadLite Carry-On Backpack is usually ideal for weekend travel."
+},
+
+{
+"id": "f7",
+"question": "Do you sell anti-theft travel bags?",
+"answer": "Yes, the RoamSafe Anti-Theft Backpack includes hidden zippers and RFID protection for added security."
+},
+
+{
+"id": "f8",
+"question": "Are your suitcases durable for international travel?",
+"answer": "Suitcases like the GlobeTrek Pro are designed with hard-shell materials to withstand international travel."
+},
+
+{
+"id": "f9",
+"question": "Do travel backpacks fit laptops?",
+"answer": "Many of our backpacks include padded laptop compartments that fit laptops up to 16 inches."
+},
+
+{
+"id": "f10",
+"question": "What travel gear is best for business travelers?",
+"answer": "Business travelers usually prefer products like the JetSet Laptop Travel Bag or VoyageMax Smart Suitcase."
+},
+
+{
+"id": "f11",
+"question": "Do you have travel gear for hiking trips?",
+"answer": "Yes, the TrailMate Hiking Backpack is designed specifically for hiking and outdoor adventures."
+},
+
+{
+"id": "f12",
+"question": "Are packing cubes useful for organizing luggage?",
+"answer": "Yes, packing cubes like the PackCube Organizer Set help keep clothes organized and save space in luggage."
+},
+
+{
+"id": "f13",
+"question": "Do your smart suitcases allow phone charging?",
+"answer": "Yes, the VoyageMax Smart Suitcase includes built-in USB charging for mobile devices."
+},
+
+{
+"id": "f14",
+"question": "Which suitcase is best for carry-on flights?",
+"answer": "The UltraLite Cabin Suitcase is specifically designed for carry-on luggage limits."
+},
+
+{
+"id": "f15",
+"question": "What travel accessories help during long flights?",
+"answer": "Accessories like the AirFold Travel Pillow help improve comfort during long flights."
+}
+
 ]
