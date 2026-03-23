@@ -6,14 +6,26 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 def embed(text):
     return model.encode(text, normalize_embeddings=True)
 
-from faq_data import FAQS
-from product_data import PRODUCTS
+import json
 
+with open("data/faq_data.json", "r") as f:
+    FAQS = json.load(f)
 faq_questions = [faq["question"] for faq in FAQS]
-faq_embeddings = np.array([embed(question) for question in faq_questions])
+faq_texts = [f"{faq['question']} {faq['answer']}" for faq in FAQS]
+faq_embeddings = np.array([embed(text) for text in faq_texts])
 
+with open("data/product_data.json", "r") as f:
+    PRODUCTS = json.load(f)
 product_names = [product["name"] for product in PRODUCTS]
-product_embeddings = np.array([embed(name) for name in product_names])
+product_texts = [
+    f"""
+    {product['name']} is a product ideal for {', '.join(product['use_cases'])}.
+    It has features like {', '.join(product['features'])}.
+    {product['description']}
+    """
+    for product in PRODUCTS
+]
+product_embeddings = np.array([embed(text) for text in product_texts])
 
 def search(query, top_k=1, min_similarity=0.45):
     query_embedding = embed(query)
