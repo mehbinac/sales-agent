@@ -1,372 +1,205 @@
-# AI-Powered E-commerce Sales Agent 🛒🤖
+# AI Sales Agent (FastAPI + Streamlit + Semantic Retrieval)
 
-An intelligent conversational sales agent for e-commerce, powered by open-source AI technologies including LangChain, SentenceTransformers, and Hugging Face models.
+A lightweight AI sales assistant for travel gear. The app combines:
+- FastAPI for the chat API
+- Streamlit for the web chat UI
+- SentenceTransformers for semantic retrieval from local FAQ/product data
+- Groq LLM for final response generation
 
-## Features ✨
+## What This Repository Contains
 
-- **Conversational AI Chat Agent**: LangChain-powered chat interface using open-source LLMs (Google Flan-T5)
-- **Product Search & Discovery**: Intelligent product search with filtering by category, price, and features
-- **Smart Recommendations**: Context-aware product recommendations based on user preferences
-- **Semantic FAQ Search**: Find answers using SentenceTransformers embeddings for natural language queries
-- **RESTful API**: FastAPI-based backend with comprehensive endpoints
-- **Modern Web UI**: Streamlit-based interactive frontend
-- **Fully Dockerized**: Easy deployment with Docker and docker-compose
-- **Production Ready**: Logging, error handling, and unit tests included
+This repository is a compact, single-folder implementation (not a multi-package app structure).
 
-## Architecture 🏗️
+Top-level files:
+- `main.py`: FastAPI backend with `POST /chat`
+- `app.py`: Streamlit chat frontend
+- `retriever.py`: Embedding + semantic search over local JSON datasets
+- `logger.py`: Session logging to JSON files under `logs/`
+- `data/faq_data.json`: FAQ dataset
+- `data/product_data.json`: Product catalog dataset
+- `requirements.txt`: Python dependencies
 
-```
+## Project Layout (Current Workspace)
+
+```text
 sales-agent/
-├── app/
-│   ├── api/           # FastAPI endpoints
-│   ├── models/        # Pydantic schemas
-│   ├── services/      # Business logic (chat agent, search, recommendations)
-│   └── utils/         # Configuration and logging
-├── data/              # Product catalog and FAQ database (JSON)
-├── frontend/          # Streamlit UI
-├── tests/             # Unit tests
-├── docker-compose.yml # Container orchestration
-└── requirements.txt   # Python dependencies
+├── app.py                     # Streamlit frontend
+├── main.py                    # FastAPI backend
+├── retriever.py               # Embedding model + semantic retrieval
+├── logger.py                  # Session logging utility
+├── requirements.txt           # Python dependencies
+├── README.md                  # Project documentation
+├── LICENSE                    # MIT license text
+├── .gitignore                 # Ignore rules (.venv, .env, logs, __pycache__)
+├── .env                       # Local env vars (not committed)
+├── data/
+│   ├── faq_data.json          # FAQ dataset
+│   └── product_data.json      # Product dataset
+├── logs/                      # Runtime-generated JSON sessions
+├── __pycache__/               # Runtime bytecode cache
+├── tests/                     # Present but currently empty
+└── final final/               # Extra folder containing a nested venv (not used by app)
 ```
 
-## Tech Stack 🛠️
+Notes:
+- Core runtime code is only `main.py`, `app.py`, `retriever.py`, and `logger.py`.
+- `logs/` and `__pycache__/` are generated during execution.
+- `final final/` is not imported or referenced by the app startup path.
 
-### AI/ML Components
-- **LangChain**: Orchestration framework for LLM applications (v0.3.27)
-- **Hugging Face Transformers**: Open-source LLM (google/flan-t5-base)
-- **SentenceTransformers**: Semantic search with embeddings (all-MiniLM-L6-v2)
+## How It Works
 
-### Backend
-- **FastAPI**: High-performance async API framework (v0.109.1 - security patched)
-- **Pydantic**: Data validation and settings management
-- **Python 3.10**: Core programming language
+1. User sends a message from Streamlit UI.
+2. FastAPI receives the message and conversation history.
+3. Retriever finds top semantic matches from:
+   - FAQ entries (`data/faq_data.json`)
+   - Product entries (`data/product_data.json`)
+4. Retrieved context is injected into a prompt.
+5. Groq model (`llama-3.1-8b-instant`) generates a sales-focused reply.
+6. Interaction is saved to a timestamped JSON log file.
 
-### Frontend
-- **Streamlit**: Interactive web application framework
+## Prerequisites
 
-### DevOps
-- **Docker**: Containerization
-- **Docker Compose**: Multi-container orchestration
-- **Pytest**: Testing framework
+- Python 3.10+
+- Internet access on first run (to download embedding model)
+- A Groq API key
 
-## Quick Start 🚀
+## Setup
 
-### Prerequisites
-- Docker and Docker Compose installed
-- Or Python 3.10+ for local development
-- **Internet connection required for first run** (to download AI models from Hugging Face)
+### 1. Clone and enter project
 
-### Option 1: Using Docker (Recommended)
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/mehbinac/sales-agent.git
+git clone <your-repo-url>
 cd sales-agent
 ```
 
-2. Start the services:
-```bash
-docker-compose up --build
+### 2. Create and activate virtual environment
+
+Windows (PowerShell):
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
 
-3. Access the applications:
-   - **Frontend (Streamlit)**: http://localhost:8501
-   - **API Documentation**: http://localhost:8000/docs
-   - **API Health Check**: http://localhost:8000/health
-
-### Option 2: Local Development
-
-1. Clone the repository:
+Windows (Git Bash):
 ```bash
-git clone https://github.com/mehbinac/sales-agent.git
-cd sales-agent
+python -m venv .venv
+source .venv/Scripts/activate
 ```
 
-2. Create a virtual environment:
+macOS/Linux:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-3. Install dependencies:
+### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Start the API server:
-```bash
-python -m uvicorn app.api.main:app --reload --host 0.0.0.0 --port 8000
+### 4. Configure environment variables
+
+Create a `.env` file in the repo root with:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
-5. In a new terminal, start the Streamlit frontend:
-```bash
-streamlit run frontend/streamlit_app.py --server.port 8501
-```
+## Run the Application
 
-## API Documentation 📚
-
-### Key Endpoints
-
-#### Products
-- `GET /products` - Get all products
-- `GET /products/{id}` - Get product by ID
-- `POST /products/search` - Search products with filters
-- `GET /categories` - Get all categories
-- `POST /recommendations` - Get product recommendations
-
-#### FAQs
-- `GET /faqs` - Get all FAQs
-- `POST /faqs/search` - Semantic search for FAQs
-
-#### Chat
-- `POST /chat` - Chat with the AI sales agent
-
-Full interactive API documentation available at: `http://localhost:8000/docs`
-
-## Usage Examples 💡
-
-### Chat with the Agent
-```python
-import requests
-
-response = requests.post("http://localhost:8000/chat", json={
-    "message": "I'm looking for wireless headphones under $100",
-    "conversation_history": []
-})
-
-print(response.json())
-```
-
-### Search Products
-```python
-response = requests.post("http://localhost:8000/products/search", json={
-    "query": "bluetooth",
-    "category": "Electronics",
-    "max_price": 100
-})
-
-products = response.json()
-```
-
-### Get Recommendations
-```python
-response = requests.post("http://localhost:8000/recommendations", json={
-    "product_id": 1,
-    "max_results": 5
-})
-
-recommendations = response.json()
-```
-
-## Testing 🧪
-
-Run the test suite:
+### Terminal 1: Start FastAPI backend
 
 ```bash
-pytest tests/ -v
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Run specific test files:
-```bash
-pytest tests/test_api.py -v
-pytest tests/test_product_service.py -v
-pytest tests/test_semantic_search.py -v
-```
-
-## Project Structure 📁
-
-```
-sales-agent/
-├── app/
-│   ├── api/
-│   │   ├── __init__.py
-│   │   └── main.py              # FastAPI application
-│   ├── models/
-│   │   ├── __init__.py
-│   │   └── schemas.py           # Pydantic models
-│   ├── services/
-│   │   ├── __init__.py
-│   │   ├── chat_agent.py        # LangChain chat agent
-│   │   ├── product_service.py   # Product management
-│   │   └── semantic_search.py   # FAQ semantic search
-│   └── utils/
-│       ├── __init__.py
-│       ├── config.py            # Configuration
-│       └── logger.py            # Logging setup
-├── data/
-│   ├── products.json            # Product catalog
-│   └── faqs.json                # FAQ database
-├── frontend/
-│   └── streamlit_app.py         # Streamlit UI
-├── tests/
-│   ├── __init__.py
-│   ├── test_api.py              # API tests
-│   ├── test_product_service.py  # Service tests
-│   └── test_semantic_search.py  # Search tests
-├── .env.example                 # Environment template
-├── .gitignore
-├── docker-compose.yml           # Multi-container setup
-├── Dockerfile.api               # API container
-├── Dockerfile.frontend          # Frontend container
-├── requirements.txt             # Python dependencies
-└── README.md                    # This file
-```
-
-## Configuration ⚙️
-
-Configuration is managed through environment variables. Copy `.env.example` to `.env` and customize:
+### Terminal 2: Start Streamlit frontend
 
 ```bash
-# Application Settings
-APP_NAME=E-commerce Sales Agent
-LOG_LEVEL=INFO
-
-# LLM Settings
-MODEL_NAME=google/flan-t5-base
-EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
-
-# API Settings
-API_HOST=0.0.0.0
-API_PORT=8000
-
-# Streamlit Settings
-STREAMLIT_PORT=8501
+streamlit run app.py --server.port 8501
 ```
 
-## Data Models 📊
+Open:
+- Streamlit UI: `http://127.0.0.1:8501`
+- FastAPI docs: `http://127.0.0.1:8000/docs`
 
-### Product Catalog
-- 10 sample products across multiple categories
-- Each product includes: name, category, price, description, features, stock, rating
+Optional quick API check:
 
-### FAQ Database
-- 10 common e-commerce FAQs
-- Covers: returns, shipping, payments, warranties, support
-
-Both datasets are in JSON format and easily extensible.
-
-## Features in Detail 🔍
-
-### 1. Conversational Chat Agent
-- Powered by Google Flan-T5 model via LangChain
-- Context-aware responses using conversation history
-- Automatically searches products and FAQs based on user queries
-- Returns relevant products and information in responses
-
-### 2. Product Search
-- Full-text search across product names, descriptions, and features
-- Filters by category, price range
-- Intelligent matching and ranking
-
-### 3. Recommendations
-- Category-based recommendations
-- Product similarity recommendations
-- Configurable result limits
-
-### 4. Semantic FAQ Search
-- Uses SentenceTransformers for embedding-based search
-- Finds semantically similar questions even with different wording
-- Returns top-k most relevant FAQs with similarity scores
-
-## Logging 📝
-
-Logs are written to:
-- Console (stdout)
-- `logs/app.log` file
-
-Log levels can be configured via the `LOG_LEVEL` environment variable.
-
-## Docker Deployment 🐳
-
-The application consists of two services:
-
-1. **API Service**: FastAPI backend with the chat agent
-2. **Frontend Service**: Streamlit web interface
-
-Both services are orchestrated via docker-compose for easy deployment.
-
-### Build and Run
 ```bash
-docker-compose up --build
+curl -X POST http://127.0.0.1:8000/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message":"I need a carry-on backpack","history":[]}'
 ```
 
-### Stop Services
-```bash
-docker-compose down
+## API
+
+### `POST /chat`
+
+Request body:
+
+```json
+{
+  "message": "I need a carry-on bag for weekend trips",
+  "history": []
+}
 ```
 
-### View Logs
-```bash
-docker-compose logs -f
+Response body:
+
+```json
+{
+  "response": "...assistant reply...",
+  "updated_history": [
+    {"role": "system", "content": "..."},
+    {"role": "user", "content": "..."},
+    {"role": "assistant", "content": "..."}
+  ]
+}
 ```
 
-## Development 👨‍💻
+## Data Files
 
-### Adding New Products
-Edit `data/products.json` to add new products following the existing schema.
+### FAQ schema (`data/faq_data.json`)
+Each item includes:
+- `id`
+- `question`
+- `answer`
 
-### Adding New FAQs
-Edit `data/faqs.json` to add new FAQ entries.
+### Product schema (`data/product_data.json`)
+Each item includes:
+- `id`
+- `name`
+- `category`
+- `price_range`
+- `ideal_for` (list)
+- `features` (list)
+- `description`
+- `use_cases` (list)
 
-### Extending the Chat Agent
-Modify `app/services/chat_agent.py` to customize the LLM prompt or add new capabilities.
+## Logging
 
-### Customizing the UI
-Edit `frontend/streamlit_app.py` to modify the user interface.
+Each run creates a session log in `logs/`:
+- File format: `session_YYYYMMDD_HHMMSS.json`
+- Entries include user input, retrieved context, similarity scores, and assistant reply.
 
-## Troubleshooting 🔧
+## Notes and Limitations
 
-### Model Download Issues
-The first run downloads the LLM and embedding models from Hugging Face. This may take time depending on your connection.
+- The retriever preloads data and embeddings at import time.
+- First startup may be slower while `all-MiniLM-L6-v2` downloads.
+- If no results pass similarity threshold (`min_similarity=0.45`), context can be sparse.
+- `tests/` currently exists but is empty in this repo state.
+- The repository includes an extra folder `final final/` with a nested virtual environment; it is not part of the active app flow.
 
-**Model sizes:**
-- Flan-T5 base model: ~900 MB
-- SentenceTransformers model: ~80 MB
+## Quick Troubleshooting
 
-Models are cached after first download in `~/.cache/huggingface/`
+- `KeyError: 'GROQ_API_KEY'`:
+  Add `GROQ_API_KEY` to `.env` and restart backend.
+- Backend not reachable from Streamlit:
+  Ensure FastAPI is running on `127.0.0.1:8000`.
+- Slow first request:
+  Wait for embedding model download/cache to complete.
 
-### Memory Requirements
-The Flan-T5 base model requires approximately 1-2 GB of RAM. For lower memory environments, consider using a smaller model like `google/flan-t5-small`.
+## License
 
-### API Connection Issues
-Ensure the API is running before starting the frontend. Check `http://localhost:8000/health` to verify the API is accessible.
-
-### Network Restrictions
-If running in an environment with restricted internet access:
-- Product search and recommendations will work normally (no models needed)
-- Semantic FAQ search and AI chat features will be unavailable until models are downloaded
-- The application gracefully degrades - core features remain functional
-
-## Future Enhancements 🚀
-
-- [ ] Add user authentication and session management
-- [ ] Implement shopping cart functionality
-- [ ] Add product image support
-- [ ] Integrate with real payment gateways
-- [ ] Add more sophisticated recommendation algorithms
-- [ ] Support for multiple languages
-- [ ] Deploy to cloud platforms (AWS, GCP, Azure)
-
-## Contributing 🤝
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License 📄
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments 🙏
-
-- [LangChain](https://github.com/langchain-ai/langchain) for the LLM framework
-- [Hugging Face](https://huggingface.co/) for the open-source models
-- [SentenceTransformers](https://www.sbert.net/) for semantic search capabilities
-- [FastAPI](https://fastapi.tiangolo.com/) for the excellent API framework
-- [Streamlit](https://streamlit.io/) for the intuitive UI framework
-
-## Support 💬
-
-For issues, questions, or contributions, please open an issue on GitHub.
-
----
-
-Built with ❤️ using open-source AI technologies
+MIT - see `LICENSE`.
