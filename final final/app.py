@@ -1,94 +1,73 @@
-import os
 import streamlit as st
-from groq import Groq
-from dotenv import load_dotenv
-# from test_groq import test_groq
-from retriever import search
-from logger import log_interaction
+import requests
 
-def main():
+# Backend API endpoint for chat requests
+API_URL = "http://127.0.0.1:8000/chat"
 
-    load_dotenv()
+# Configure Streamlit page settings
+st.set_page_config(page_title="AI Sales Agent", layout="centered")
+st.title("🤖 AI Sales Agent")
 
-    # Initialize Groq client
-    client = Groq(api_key=os.environ["GROQ_API_KEY"])
+# Initialize conversation history (stores full message thread with system message, user queries, assistant responses)
+# This is sent to backend to maintain multi-turn context
+if "history" not in st.session_state:
+    st.session_state.history = []
 
-    if "messages" not in st.session_state:
-        st.session_state.messages = [
-            {
-                "role": "system", 
-                "content": """You are a confident and strategic AI sales agent.
+# Initialize chat display list (stores only user and assistant messages for UI rendering)
+# Separate from history to avoid showing system message in chat interface
+if "chat_display" not in st.session_state:
+    st.session_state.chat_display = []
 
-                Your job is not just to answer questions, but to actively guide the customer toward a clear decision.
+# Render all previous messages in the chat interface
+for msg in st.session_state.chat_display:
+    with st.chat_message(msg["role"]):
+        st.write(msg["content"])
 
-                You should:
-                - Lead the conversation, not just react.
-                - Narrow options quickly.
-                - Ask one purposeful question that moves closer to a recommendation.
-                - When enough context is available, confidently recommend a specific solution and explain why it is the best fit.
+# Get user input from chat input box
+user_input = st.chat_input("Type your message...")
 
-                Keep your tone natural and conversational.
-                Avoid sounding scripted or overly formal.
-                Do not generate customer responses.
-                """
-                }
-        ]
+# Process new user message
+if user_input:
+    # Add user message to display list (for UI rendering)
+    st.session_state.chat_display.append({
+        "role": "user",
+        "content": user_input
+    })
 
-    st.set_page_config(page_title="Groq Test App", layout="centered")
-    st.title("🧪 Groq + Streamlit Test")
+    # Display user message in chat bubble
+    with st.chat_message("user"):
+        st.write(user_input)
 
-    user_input = st.text_area("Enter a message")
+    # Send request to FastAPI backend with spinner for UX feedback
+    with st.spinner("Thinking..."):
+        response = requests.post(
+            API_URL,
+            json={
+                "message": user_input,
+                "history": st.session_state.history
+            }
+        )
 
-    if st.button("Send"):
-        if not user_input.strip():
-            st.warning("Please enter a message.")
-        else:
-            with st.spinner("Calling Groq..."):
-                relevant_faqs, faq_scores, relevant_products, product_scores = search(user_input, top_k=1)
+    # Handle successful API response
+    if response.status_code == 200:
+        data = response.json()
+        # Extract LLM response from backend
+        reply = data["response"]
 
-                faq_context = "\n".join([
-                    f"Q: {faq['question']}\nA: {faq['answer']}"
-                    for faq in relevant_faqs
-                ])
-                faq_scores_str = ", ".join([f"{score:.2f}" for score in faq_scores])
-                product_context = "\n".join([
-                    f"Product: {product['name']}\nCategory: {product['category']}\nPrice Range: {product['price_range']}\nDescription: {product['description']}\nFeatures: {', '.join(product['features'])}\nIdeal For: {', '.join(product['ideal_for'])}\nUse Cases: {', '.join(product['use_cases'])}"
-                    for product in relevant_products
-                ])
-                product_scores_str = ", ".join([f"{score:.2f}" for score in product_scores])
-                # Instead of appending system messages mid-conversation, create one combined context
-                combined_context = f"""Relevant FAQ information:
-                {faq_context}
-                
-                Relevant product information:
-                {product_context}"""
-                
-                st.session_state.messages.append(
-                    {"role": "user", "content": f"{combined_context}\n\nUser question: {user_input}"}
-                )
+        # Update conversation history with backend's version (includes system message and full context)
+        # This persists for next request to maintain multi-turn context
+        st.session_state.history = data["updated_history"]
 
-                response = client.chat.completions.create(
-                    model="llama-3.1-8b-instant",
-                    messages=st.session_state.messages,
-                    temperature=0.3,
-                    max_tokens=200
-                )
-                assistant_reply = response.choices[0].message.content
-                st.session_state.messages.append(
-                    {"role": "assistant", "content": assistant_reply}
-                )
-                st.subheader("Response")
-                st.write(assistant_reply)
+        # Add assistant response to display list (for UI rendering)
+        st.session_state.chat_display.append({
+            "role": "assistant",
+            "content": reply
+        })
 
-                # Log the interaction
-                log_interaction({
-                    "user_input": user_input,
-                    "faq_context": faq_context,
-                    "faq_scores": faq_scores_str,
-                    "product_context": product_context,
-                    "product_scores": product_scores_str,
-                    "assistant_reply": assistant_reply
-                })
+        # Display assistant message in chat bubble
+        with st.chat_message("assistant"):
+            st.write(reply)
 
-if __name__ == "__main__":
-    main()
+    # Handle API connection errors
+    else:
+        st.error("Error connecting to backend")
