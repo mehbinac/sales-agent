@@ -14,38 +14,30 @@ app = FastAPI()
 client = Groq(api_key=os.environ["GROQ_API_KEY"])
 
 
-# Request schema
 class ChatRequest(BaseModel):
     message: str
     history: list = []
 
 
-# Response schema
 class ChatResponse(BaseModel):
     response: str
     updated_history: list
 
 
-# API endpoint that handles chat requests from frontend
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
-    # Extract user message and conversation history from request
     user_input = req.message
     history = req.history
 
-    # Step 1: Retrieve relevant FAQs and products using semantic search
-    # search() returns top_k matches with similarity scores for each
+    # Retrieve top semantic matches from FAQ and product catalogs.
     relevant_faqs, faq_scores, relevant_products, product_scores = search(user_input, top_k=1)
 
-    # Format FAQs into readable string for LLM context
     faq_context = "\n".join([
         f"Q: {faq['question']}\nA: {faq['answer']}"
         for faq in relevant_faqs
     ])
-    # Convert similarity scores to formatted strings for logging
     faq_scores_str = ", ".join([f"{score:.2f}" for score in faq_scores])
 
-    # Format products into detailed context string with all relevant attributes
     product_context = "\n".join([
         f"Product: {product['name']}\n"
         f"Category: {product['category']}\n"
@@ -56,10 +48,8 @@ def chat(req: ChatRequest):
         f"Use Cases: {', '.join(product['use_cases'])}"
         for product in relevant_products
     ])
-    # Convert product scores to formatted strings for logging
     product_scores_str = ", ".join([f"{score:.2f}" for score in product_scores])
 
-    # Combine FAQ and product information into single context prompt for LLM
     combined_context = f"""Relevant FAQ information:
         {faq_context}
 
@@ -67,12 +57,8 @@ def chat(req: ChatRequest):
         {product_context}
         """
 
-    # Step 2: Build message thread for LLM
-    # Create a copy of history to avoid mutating frontend's state
     messages = history.copy()
 
-    # Add system message only on first request (when history is empty)
-    # Subsequent requests will already have it from previous response
     if not messages:
         messages.append({
             "role": "system",
@@ -92,16 +78,12 @@ def chat(req: ChatRequest):
             """
         })
 
-    # Add user message with retrieved context to message thread
-    # Context includes relevant FAQs and products to help LLM make informed recommendations
+    # Inject retrieved context into the user turn sent to the model.
     messages.append({
         "role": "user",
         "content": f"{combined_context}\n\nUser question: {user_input}"
     })
 
-    # Step 3: Call Groq API with the complete message thread
-    # temperature=0.3 keeps responses focused and deterministic (lower = more deterministic)
-    # max_tokens=200 limits response length for concise recommendations
     response = client.chat.completions.create(
         model="llama-3.1-8b-instant",
         messages=messages,
@@ -109,16 +91,14 @@ def chat(req: ChatRequest):
         max_tokens=200
     )
 
-    # Extract the LLM response
     assistant_reply = response.choices[0].message.content
 
-    # Add assistant response to message thread for next multi-turn request
+    # Return assistant reply and keep full thread for multi-turn chat.
     messages.append({
         "role": "assistant",
         "content": assistant_reply
     })
 
-    # Step 4: Log interaction to JSON file for monitoring and debugging
     log_interaction({
         "user_input": user_input,
         "faq_context": faq_context,
@@ -128,8 +108,6 @@ def chat(req: ChatRequest):
         "assistant_reply": assistant_reply
     })
 
-    # Return LLM response and updated message history to frontend
-    # Frontend stores updated_history for next request to maintain conversation context
     return ChatResponse(
         response=assistant_reply,
         updated_history=messages
