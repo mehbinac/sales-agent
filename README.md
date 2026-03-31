@@ -132,6 +132,58 @@ curl -X POST http://127.0.0.1:8000/chat \
   -d '{"message":"I need a carry-on backpack","history":[]}'
 ```
 
+## Docker Setup
+
+This repository now includes:
+- `Dockerfile` (shared image for backend/frontend)
+- `docker-compose.yml` (runs both services)
+- `.dockerignore`
+
+### 1. Set env vars
+
+Create `.env` in repo root (used by backend service):
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+### 2. Build and run
+
+```bash
+docker compose up --build
+```
+
+Services:
+- Streamlit UI: `http://localhost:8501`
+- FastAPI docs: `http://localhost:8000/docs`
+
+### 3. Stop
+
+```bash
+docker compose down
+```
+
+### Useful options
+
+Run in background:
+
+```bash
+docker compose up --build -d
+```
+
+View logs:
+
+```bash
+docker compose logs -f
+```
+
+Rebuild cleanly when dependencies change:
+
+```bash
+docker compose build --no-cache
+docker compose up
+```
+
 ## API
 
 ### `POST /chat`
