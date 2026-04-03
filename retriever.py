@@ -19,9 +19,13 @@ with open("data/product_data.json", "r") as f:
 product_names = [product["name"] for product in PRODUCTS]
 product_texts = [
     f"""
-    {product['name']} is a product ideal for {', '.join(product['use_cases'])}.
-    It has features like {', '.join(product['features'])}.
-    {product['description']}
+    Product Name: {product['name']}
+    Category: {product['category']}
+    Price Range: {product['price_range']}
+    Ideal For: {', '.join(product['ideal_for'])}
+    Use Cases: {', '.join(product['use_cases'])}
+    Features: {', '.join(product['features'])}
+    Description: {product['description']}
     """
     for product in PRODUCTS
 ]
