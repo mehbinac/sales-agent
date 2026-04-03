@@ -3,7 +3,7 @@
         "id": "p1",
         "name": "NomadLite Carry-On Backpack",
         "category": "backpack",
-        "price_range": "mid",
+        "price_range": 89,
         "ideal_for": ["frequent travelers", "digital nomads", "weekend trips"],
         "features": ["40L capacity", "laptop compartment", "water resistant", "anti-theft pockets"],
         "description": "A lightweight carry-on travel backpack designed for digital nomads and weekend travelers.",
@@ -14,7 +14,7 @@
         "id": "p2",
         "name": "GlobeTrek Pro Suitcase",
         "category": "suitcase",
-        "price_range": "high",
+        "price_range": 229,
         "ideal_for": ["international travel", "long vacations"],
         "features": ["hard shell", "360° spinner wheels", "TSA lock", "expandable storage"],
         "description": "A durable hard-shell suitcase built for international travel and long journeys.",
@@ -25,7 +25,7 @@
         "id": "p3",
         "name": "TrailMate Hiking Backpack",
         "category": "backpack",
-        "price_range": "mid",
+        "price_range": 95,
         "ideal_for": ["adventure travelers", "hiking trips"],
         "features": ["50L capacity", "ergonomic straps", "hydration system", "rain cover"],
         "description": "A rugged backpack built for hiking and outdoor adventures.",
@@ -36,7 +36,7 @@
         "id": "p4",
         "name": "FlexPack Expandable Duffel",
         "category": "duffel bag",
-        "price_range": "low",
+        "price_range": 35,
         "ideal_for": ["gym travelers", "short trips"],
         "features": ["expandable storage", "lightweight fabric", "shoe compartment"],
         "description": "A compact duffel bag perfect for short trips and gym sessions.",
@@ -47,7 +47,7 @@
         "id": "p5",
         "name": "VoyageMax Smart Suitcase",
         "category": "suitcase",
-        "price_range": "high",
+        "price_range": 279,
         "ideal_for": ["business travelers", "tech-savvy travelers"],
         "features": ["USB charging port", "GPS tracking", "fingerprint lock"],
         "description": "A smart suitcase equipped with built-in charging and GPS tracking.",
@@ -58,7 +58,7 @@
         "id": "p6",
         "name": "AirFold Travel Pillow",
         "category": "travel accessory",
-        "price_range": "low",
+        "price_range": 22,
         "ideal_for": ["frequent flyers", "long flights"],
         "features": ["memory foam", "compact folding", "ergonomic support"],
         "description": "A comfortable memory foam travel pillow designed for long flights.",
@@ -69,7 +69,7 @@
         "id": "p7",
         "name": "PackCube Organizer Set",
         "category": "travel accessory",
-        "price_range": "low",
+        "price_range": 28,
         "ideal_for": ["organized travelers"],
         "features": ["compression cubes", "lightweight fabric", "mesh panels"],
         "description": "Packing cubes that help organize luggage efficiently.",
@@ -80,7 +80,7 @@
         "id": "p8",
         "name": "RoamSafe Anti-Theft Backpack",
         "category": "backpack",
-        "price_range": "mid",
+        "price_range": 99,
         "ideal_for": ["city travel", "crowded destinations"],
         "features": ["hidden zippers", "RFID protection", "cut-resistant fabric"],
         "description": "A secure backpack designed to prevent theft in crowded places.",
@@ -91,7 +91,7 @@
         "id": "p9",
         "name": "JetSet Laptop Travel Bag",
         "category": "backpack",
-        "price_range": "mid",
+        "price_range": 85,
         "ideal_for": ["business travelers", "remote workers"],
         "features": ["laptop sleeve", "USB charging port", "minimalist design"],
         "description": "A sleek laptop backpack built for business travel and remote work.",
@@ -102,10 +102,1029 @@
         "id": "p10",
         "name": "UltraLite Cabin Suitcase",
         "category": "suitcase",
-        "price_range": "mid",
+        "price_range": 119,
         "ideal_for": ["carry-on travelers"],
         "features": ["lightweight design", "spinner wheels", "scratch resistant"],
         "description": "A lightweight carry-on suitcase optimized for cabin luggage limits.",
         "use_cases": ["carry-on flights", "short vacations"]
+        },
+    {
+        "id": "p11",
+        "name": "UrbanLite Daypack",
+        "category": "backpack",
+        "price_range": 32,
+        "ideal_for": ["daily commuters", "students"],
+        "features": ["20L capacity", "lightweight", "water resistant"],
+        "description": "A compact and lightweight backpack for everyday city use.",
+        "use_cases": ["daily commute", "college"]
+    },
+    {
+        "id": "p12",
+        "name": "Explorer Trek 60L Backpack",
+        "category": "backpack",
+        "price_range": 165,
+        "ideal_for": ["trekkers", "long expeditions"],
+        "features": ["60L capacity", "frame support", "rain cover"],
+        "description": "A large-capacity backpack designed for long trekking adventures.",
+        "use_cases": ["trekking", "expeditions"]
+    },
+    {
+        "id": "p13",
+        "name": "CityRoll Cabin Suitcase",
+        "category": "suitcase",
+        "price_range": 105,
+        "ideal_for": ["short trips"],
+        "features": ["compact size", "spinner wheels", "durable shell"],
+        "description": "A sleek cabin suitcase perfect for short business or leisure trips.",
+        "use_cases": ["weekend trips"]
+    },
+    {
+        "id": "p14",
+        "name": "EcoTravel Duffel",
+        "category": "duffel bag",
+        "price_range": 30,
+        "ideal_for": ["eco-conscious travelers"],
+        "features": ["recycled materials", "lightweight", "foldable"],
+        "description": "An eco-friendly duffel bag made from recycled materials.",
+        "use_cases": ["short travel", "gym"]
+    },
+    {
+        "id": "p15",
+        "name": "ProTech Laptop Backpack",
+        "category": "backpack",
+        "price_range": 92,
+        "ideal_for": ["tech professionals"],
+        "features": ["padded laptop sleeve", "USB port", "anti-shock padding"],
+        "description": "A professional backpack designed for carrying electronics safely.",
+        "use_cases": ["office commute", "business travel"]
+    },
+
+    {
+        "id": "p16",
+        "name": "Nomad Gear Organizer",
+        "category": "travel accessory",
+        "price_range": 25,
+        "ideal_for": ["organized travelers"],
+        "features": ["multi-compartment", "compact", "durable"],
+        "description": "A handy organizer for cables, gadgets, and travel essentials.",
+        "use_cases": ["packing organization"]
+    },
+    {
+        "id": "p17",
+        "name": "SkyVault Hard Suitcase",
+        "category": "suitcase",
+        "price_range": 249,
+        "ideal_for": ["international travelers"],
+        "features": ["aluminum frame", "TSA lock", "silent wheels"],
+        "description": "A premium hard-shell suitcase for secure and stylish travel.",
+        "use_cases": ["long haul flights"]
+    },
+    {
+        "id": "p18",
+        "name": "QuickTrip Mini Backpack",
+        "category": "backpack",
+        "price_range": 27,
+        "ideal_for": ["casual travelers"],
+        "features": ["15L capacity", "compact", "stylish"],
+        "description": "A mini backpack perfect for quick outings and short trips.",
+        "use_cases": ["day trips"]
+    },
+    {
+        "id": "p19",
+        "name": "CargoMax Travel Duffel",
+        "category": "duffel bag",
+        "price_range": 75,
+        "ideal_for": ["sports travelers"],
+        "features": ["large capacity", "shoulder strap", "waterproof base"],
+        "description": "A spacious duffel designed for sports gear and travel.",
+        "use_cases": ["sports travel"]
+    },
+    {
+        "id": "p20",
+        "name": "ComfortRest Neck Pillow",
+        "category": "travel accessory",
+        "price_range": 24,
+        "ideal_for": ["long-distance travelers"],
+        "features": ["memory foam", "soft fabric", "adjustable strap"],
+        "description": "A soft and supportive pillow for comfortable travel rest.",
+        "use_cases": ["flights", "bus travel"]
+    },
+
+    {
+        "id": "p21",
+        "name": "MetroShield Anti-Theft Sling",
+        "category": "backpack",
+        "price_range": 70,
+        "ideal_for": ["urban commuters"],
+        "features": ["RFID blocking", "hidden compartments", "cut-resistant strap"],
+        "description": "A secure sling bag designed for crowded urban travel.",
+        "use_cases": ["city commuting"]
+    },
+    {
+        "id": "p22",
+        "name": "FlexiPack Compression Cubes",
+        "category": "travel accessory",
+        "price_range": 26,
+        "ideal_for": ["frequent travelers"],
+        "features": ["compression zippers", "mesh panels"],
+        "description": "Efficient packing cubes to maximize luggage space.",
+        "use_cases": ["packing"]
+    },
+    {
+        "id": "p23",
+        "name": "Voyager Pro Carry-On",
+        "category": "suitcase",
+        "price_range": 115,
+        "ideal_for": ["business travelers"],
+        "features": ["lightweight", "expandable", "USB port"],
+        "description": "A versatile carry-on suitcase for modern travelers.",
+        "use_cases": ["business trips"]
+    },
+    {
+        "id": "p24",
+        "name": "Adventure Hydration Pack",
+        "category": "backpack",
+        "price_range": 80,
+        "ideal_for": ["hikers", "cyclists"],
+        "features": ["hydration bladder", "lightweight"],
+        "description": "A compact hydration backpack for outdoor activities.",
+        "use_cases": ["hiking", "cycling"]
+    },
+    {
+        "id": "p25",
+        "name": "PackMate Toiletry Kit",
+        "category": "travel accessory",
+        "price_range": 20,
+        "ideal_for": ["travelers"],
+        "features": ["waterproof lining", "multiple compartments"],
+        "description": "A convenient toiletry bag for organized packing.",
+        "use_cases": ["travel organization"]
+    },
+
+    {
+        "id": "p26",
+        "name": "LiteCarry Foldable Backpack",
+        "category": "backpack",
+        "price_range": 29,
+        "ideal_for": ["minimalists"],
+        "features": ["foldable", "ultra-light"],
+        "description": "A foldable backpack for easy storage and light travel.",
+        "use_cases": ["backup bag"]
+    },
+    {
+        "id": "p27",
+        "name": "StormGuard Waterproof Duffel",
+        "category": "duffel bag",
+        "price_range": 95,
+        "ideal_for": ["adventure travel"],
+        "features": ["waterproof", "sealed zippers"],
+        "description": "A rugged waterproof duffel for extreme conditions.",
+        "use_cases": ["outdoor travel"]
+    },
+    {
+        "id": "p28",
+        "name": "ExecuCarry Business Backpack",
+        "category": "backpack",
+        "price_range": 180,
+        "ideal_for": ["executives"],
+        "features": ["premium leather", "laptop sleeve"],
+        "description": "A luxury backpack for business professionals.",
+        "use_cases": ["corporate travel"]
+    },
+    {
+        "id": "p29",
+        "name": "ZipCube Packing Set",
+        "category": "travel accessory",
+        "price_range": 27,
+        "ideal_for": ["organized packing"],
+        "features": ["zip compression", "mesh"],
+        "description": "Packing cubes for optimized luggage space.",
+        "use_cases": ["packing"]
+    },
+    {
+        "id": "p30",
+        "name": "Travelerâ€™s Comfort Blanket",
+        "category": "travel accessory",
+        "price_range": 33,
+        "ideal_for": ["frequent flyers"],
+        "features": ["soft fleece", "compact"],
+        "description": "A travel blanket for extra comfort.",
+        "use_cases": ["flights"]
+    },
+
+    {
+        "id": "p31",
+        "name": "UrbanShield Laptop Backpack",
+        "category": "backpack",
+        "price_range": 88,
+        "ideal_for": ["students", "professionals"],
+        "features": ["laptop sleeve", "anti-theft zipper"],
+        "description": "A stylish and secure laptop backpack for everyday use.",
+        "use_cases": ["daily commute", "college"]
+    },
+    {
+        "id": "p32",
+        "name": "GlidePro Spinner Suitcase",
+        "category": "suitcase",
+        "price_range": 110,
+        "ideal_for": ["frequent flyers"],
+        "features": ["360 wheels", "lightweight", "durable shell"],
+        "description": "A smooth-rolling suitcase for hassle-free airport travel.",
+        "use_cases": ["flights", "short trips"]
+    },
+    {
+        "id": "p33",
+        "name": "TrailX Outdoor Backpack",
+        "category": "backpack",
+        "price_range": 90,
+        "ideal_for": ["hikers"],
+        "features": ["breathable straps", "hydration compatible"],
+        "description": "An all-purpose backpack for outdoor enthusiasts.",
+        "use_cases": ["hiking"]
+    },
+    {
+        "id": "p34",
+        "name": "FlexDuff Weekender Bag",
+        "category": "duffel bag",
+        "price_range": 34,
+        "ideal_for": ["weekend travelers"],
+        "features": ["expandable", "lightweight"],
+        "description": "A simple and flexible bag for short trips.",
+        "use_cases": ["weekend travel"]
+    },
+    {
+        "id": "p35",
+        "name": "SleepEase Travel Pillow",
+        "category": "travel accessory",
+        "price_range": 23,
+        "ideal_for": ["long journeys"],
+        "features": ["memory foam", "compact design"],
+        "description": "A comfortable pillow for restful travel.",
+        "use_cases": ["flights"]
+    },
+
+    {
+        "id": "p36",
+        "name": "AirLite Cabin Backpack",
+        "category": "backpack",
+        "price_range": 84,
+        "ideal_for": ["carry-on travelers"],
+        "features": ["cabin size", "lightweight"],
+        "description": "A backpack optimized for airline cabin limits.",
+        "use_cases": ["carry-on travel"]
+    },
+    {
+        "id": "p37",
+        "name": "SecureLock Travel Case",
+        "category": "travel accessory",
+        "price_range": 19,
+        "ideal_for": ["secure packing"],
+        "features": ["combination lock", "compact"],
+        "description": "A small case for keeping valuables safe.",
+        "use_cases": ["travel security"]
+    },
+    {
+        "id": "p38",
+        "name": "HeavyDuty Expedition Duffel",
+        "category": "duffel bag",
+        "price_range": 210,
+        "ideal_for": ["expeditions"],
+        "features": ["reinforced build", "weather resistant"],
+        "description": "A heavy-duty duffel for extreme travel.",
+        "use_cases": ["expeditions"]
+    },
+    {
+        "id": "p39",
+        "name": "Compact Organizer Pouch",
+        "category": "travel accessory",
+        "price_range": 18,
+        "ideal_for": ["minimalists"],
+        "features": ["zip compartments"],
+        "description": "A simple pouch for small essentials.",
+        "use_cases": ["organization"]
+    },
+    {
+        "id": "p40",
+        "name": "Nomad Cabin Roller",
+        "category": "suitcase",
+        "price_range": 108,
+        "ideal_for": ["short trips"],
+        "features": ["compact", "spinner wheels"],
+        "description": "A compact rolling suitcase for quick travel.",
+        "use_cases": ["short trips"]
+    },
+
+    {
+        "id": "p41",
+        "name": "TravelPro Expand Backpack",
+        "category": "backpack",
+        "price_range": 93,
+        "ideal_for": ["frequent travelers"],
+        "features": ["expandable", "laptop sleeve"],
+        "description": "A flexible backpack that expands for extra storage.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p42",
+        "name": "JetLite Cabin Suitcase",
+        "category": "suitcase",
+        "price_range": 102,
+        "ideal_for": ["carry-on travelers"],
+        "features": ["ultra-light", "durable"],
+        "description": "A lightweight suitcase designed for cabin travel.",
+        "use_cases": ["flights"]
+    },
+    {
+        "id": "p43",
+        "name": "TrailGear Compact Pack",
+        "category": "backpack",
+        "price_range": 35,
+        "ideal_for": ["casual hikers"],
+        "features": ["compact", "breathable"],
+        "description": "A small backpack for light outdoor activities.",
+        "use_cases": ["day hikes"]
+    },
+    {
+        "id": "p44",
+        "name": "PackSmart Cube Set",
+        "category": "travel accessory",
+        "price_range": 29,
+        "ideal_for": ["organized travelers"],
+        "features": ["compression", "lightweight"],
+        "description": "Packing cubes for efficient luggage organization.",
+        "use_cases": ["packing"]
+    },
+    {
+        "id": "p45",
+        "name": "Weekender Classic Duffel",
+        "category": "duffel bag",
+        "price_range": 70,
+        "ideal_for": ["short trips"],
+        "features": ["canvas build", "spacious"],
+        "description": "A classic duffel bag for weekend travel.",
+        "use_cases": ["weekend trips"]
+    },
+
+    {
+        "id": "p46",
+        "name": "AirComfort Neck Pillow",
+        "category": "travel accessory",
+        "price_range": 21,
+        "ideal_for": ["frequent flyers"],
+        "features": ["soft foam", "ergonomic"],
+        "description": "A supportive pillow for comfortable travel.",
+        "use_cases": ["flights"]
+    },
+    {
+        "id": "p47",
+        "name": "UrbanFlex Laptop Backpack",
+        "category": "backpack",
+        "price_range": 87,
+        "ideal_for": ["office workers"],
+        "features": ["USB port", "laptop sleeve"],
+        "description": "A modern backpack for work and travel.",
+        "use_cases": ["commute"]
+    },
+    {
+        "id": "p48",
+        "name": "GlobeRoll Expand Suitcase",
+        "category": "suitcase",
+        "price_range": 240,
+        "ideal_for": ["long trips"],
+        "features": ["expandable", "durable shell"],
+        "description": "A spacious suitcase for extended travel.",
+        "use_cases": ["long trips"]
+    },
+    {
+        "id": "p49",
+        "name": "AdventureLite Trek Bag",
+        "category": "backpack",
+        "price_range": 94,
+        "ideal_for": ["trekkers"],
+        "features": ["lightweight", "durable"],
+        "description": "A lightweight trekking backpack.",
+        "use_cases": ["trekking"]
+    },
+    {
+        "id": "p50",
+        "name": "PackEase Toiletry Organizer",
+        "category": "travel accessory",
+        "price_range": 22,
+        "ideal_for": ["travelers"],
+        "features": ["waterproof", "multi-pocket"],
+        "description": "A practical toiletry organizer for travel.",
+        "use_cases": ["organization"]
+    },
+
+    {
+        "id": "p51",
+        "name": "SmartCarry Anti-Theft Backpack",
+        "category": "backpack",
+        "price_range": 96,
+        "ideal_for": ["city travelers"],
+        "features": ["RFID protection", "hidden zippers"],
+        "description": "A secure backpack for crowded environments.",
+        "use_cases": ["city travel"]
+    },
+    {
+        "id": "p52",
+        "name": "LiteRoll Cabin Case",
+        "category": "suitcase",
+        "price_range": 100,
+        "ideal_for": ["short trips"],
+        "features": ["lightweight", "spinner wheels"],
+        "description": "A compact and easy-to-carry suitcase.",
+        "use_cases": ["short trips"]
+    },
+    {
+        "id": "p53",
+        "name": "TrailLite Hiking Pack",
+        "category": "backpack",
+        "price_range": 89,
+        "ideal_for": ["hikers"],
+        "features": ["breathable straps", "hydration ready"],
+        "description": "A reliable hiking backpack.",
+        "use_cases": ["hiking"]
+    },
+    {
+        "id": "p54",
+        "name": "FlexiDuff Travel Bag",
+        "category": "duffel bag",
+        "price_range": 31,
+        "ideal_for": ["casual travel"],
+        "features": ["foldable", "lightweight"],
+        "description": "A flexible duffel for everyday travel.",
+        "use_cases": ["short trips"]
+    },
+    {
+        "id": "p55",
+        "name": "RestMate Travel Pillow",
+        "category": "travel accessory",
+        "price_range": 20,
+        "ideal_for": ["long journeys"],
+        "features": ["memory foam"],
+        "description": "A compact pillow for travel comfort.",
+        "use_cases": ["flights"]
+    },
+
+    {
+        "id": "p56",
+        "name": "CityEdge Sling Backpack",
+        "category": "backpack",
+        "price_range": 38,
+        "ideal_for": ["urban travelers"],
+        "features": ["compact", "crossbody design"],
+        "description": "A stylish sling for quick access.",
+        "use_cases": ["city travel"]
+    },
+    {
+        "id": "p57",
+        "name": "TravelCube Organizer Set",
+        "category": "travel accessory",
+        "price_range": 26,
+        "ideal_for": ["organized travelers"],
+        "features": ["mesh panels"],
+        "description": "A set of cubes for neat packing.",
+        "use_cases": ["packing"]
+    },
+    {
+        "id": "p58",
+        "name": "SkyTravel Pro Suitcase",
+        "category": "suitcase",
+        "price_range": 260,
+        "ideal_for": ["international travel"],
+        "features": ["hard shell", "TSA lock"],
+        "description": "A durable suitcase for global travel.",
+        "use_cases": ["international trips"]
+    },
+    {
+        "id": "p59",
+        "name": "TrailMax Adventure Pack",
+        "category": "backpack",
+        "price_range": 190,
+        "ideal_for": ["expeditions"],
+        "features": ["large capacity", "durable"],
+        "description": "A heavy-duty pack for serious adventures.",
+        "use_cases": ["expeditions"]
+    },
+    {
+        "id": "p60",
+        "name": "Weekender Fold Duffel",
+        "category": "duffel bag",
+        "price_range": 33,
+        "ideal_for": ["short trips"],
+        "features": ["foldable"],
+        "description": "A compact duffel for weekend use.",
+        "use_cases": ["weekend"]
+    },
+
+    {
+        "id": "p61",
+        "name": "AirRest Premium Pillow",
+        "category": "travel accessory",
+        "price_range": 55,
+        "ideal_for": ["frequent flyers"],
+        "features": ["ergonomic foam"],
+        "description": "Premium comfort for long flights.",
+        "use_cases": ["flights"]
+    },
+    {
+        "id": "p62",
+        "name": "UrbanPack Daily Backpack",
+        "category": "backpack",
+        "price_range": 34,
+        "ideal_for": ["students"],
+        "features": ["lightweight"],
+        "description": "A simple backpack for daily use.",
+        "use_cases": ["college"]
+    },
+    {
+        "id": "p63",
+        "name": "JetRoll Cabin Suitcase",
+        "category": "suitcase",
+        "price_range": 98,
+        "ideal_for": ["carry-on travel"],
+        "features": ["compact"],
+        "description": "A cabin-friendly suitcase.",
+        "use_cases": ["flights"]
+    },
+    {
+        "id": "p64",
+        "name": "TrailGo Hiking Pack",
+        "category": "backpack",
+        "price_range": 85,
+        "ideal_for": ["hiking"],
+        "features": ["breathable"],
+        "description": "A comfortable hiking backpack.",
+        "use_cases": ["hiking"]
+    },
+    {
+        "id": "p65",
+        "name": "PackLite Organizer",
+        "category": "travel accessory",
+        "price_range": 19,
+        "ideal_for": ["minimalists"],
+        "features": ["compact"],
+        "description": "A lightweight organizer.",
+        "use_cases": ["packing"]
+    },
+
+    {
+        "id": "p66",
+        "name": "FlexCarry Duffel",
+        "category": "duffel bag",
+        "price_range": 28,
+        "ideal_for": ["gym users"],
+        "features": ["lightweight"],
+        "description": "A basic duffel bag.",
+        "use_cases": ["gym"]
+    },
+    {
+        "id": "p67",
+        "name": "SecureLite Backpack",
+        "category": "backpack",
+        "price_range": 82,
+        "ideal_for": ["city travel"],
+        "features": ["anti-theft"],
+        "description": "A safe travel backpack.",
+        "use_cases": ["city"]
+    },
+    {
+        "id": "p68",
+        "name": "TravelEase Cabin Case",
+        "category": "suitcase",
+        "price_range": 104,
+        "ideal_for": ["short trips"],
+        "features": ["spinner wheels"],
+        "description": "A smooth cabin suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p69",
+        "name": "TrailLite Mini Pack",
+        "category": "backpack",
+        "price_range": 30,
+        "ideal_for": ["day trips"],
+        "features": ["compact"],
+        "description": "A mini outdoor backpack.",
+        "use_cases": ["day trips"]
+    },
+    {
+        "id": "p70",
+        "name": "ComfortPlus Pillow",
+        "category": "travel accessory",
+        "price_range": 18,
+        "ideal_for": ["travelers"],
+        "features": ["soft foam"],
+        "description": "A soft neck pillow.",
+        "use_cases": ["rest"]
+    },
+
+    {
+        "id": "p71",
+        "name": "UrbanPro Laptop Backpack",
+        "category": "backpack",
+        "price_range": 91,
+        "ideal_for": ["professionals"],
+        "features": ["laptop sleeve"],
+        "description": "A sleek work backpack.",
+        "use_cases": ["work"]
+    },
+    {
+        "id": "p72",
+        "name": "SkyLite Travel Suitcase",
+        "category": "suitcase",
+        "price_range": 112,
+        "ideal_for": ["family travel"],
+        "features": ["expandable"],
+        "description": "A flexible suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p73",
+        "name": "TrailPro Outdoor Pack",
+        "category": "backpack",
+        "price_range": 175,
+        "ideal_for": ["adventurers"],
+        "features": ["durable"],
+        "description": "A rugged outdoor pack.",
+        "use_cases": ["adventure"]
+    },
+    {
+        "id": "p74",
+        "name": "PackSmart Travel Kit",
+        "category": "travel accessory",
+        "price_range": 21,
+        "ideal_for": ["beginners"],
+        "features": ["compact"],
+        "description": "A simple travel kit.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p75",
+        "name": "FlexDuff Compact Bag",
+        "category": "duffel bag",
+        "price_range": 27,
+        "ideal_for": ["short travel"],
+        "features": ["lightweight"],
+        "description": "A compact duffel.",
+        "use_cases": ["travel"]
+    },
+
+    {
+        "id": "p76",
+        "name": "AirComfort Pro Pillow",
+        "category": "travel accessory",
+        "price_range": 58,
+        "ideal_for": ["long flights"],
+        "features": ["ergonomic"],
+        "description": "Advanced travel pillow.",
+        "use_cases": ["flights"]
+    },
+    {
+        "id": "p77",
+        "name": "MetroLite Backpack",
+        "category": "backpack",
+        "price_range": 33,
+        "ideal_for": ["commuters"],
+        "features": ["lightweight"],
+        "description": "A simple daily backpack.",
+        "use_cases": ["commute"]
+    },
+    {
+        "id": "p78",
+        "name": "JetCarry Cabin Roller",
+        "category": "suitcase",
+        "price_range": 99,
+        "ideal_for": ["short trips"],
+        "features": ["compact"],
+        "description": "A small rolling suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p79",
+        "name": "TrailGo Compact Pack",
+        "category": "backpack",
+        "price_range": 31,
+        "ideal_for": ["casual travel"],
+        "features": ["compact"],
+        "description": "A small travel backpack.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p80",
+        "name": "PackEase Organizer Kit",
+        "category": "travel accessory",
+        "price_range": 23,
+        "ideal_for": ["organized travel"],
+        "features": ["multi-pocket"],
+        "description": "A packing organizer kit.",
+        "use_cases": ["packing"]
+    },
+
+    {
+        "id": "p81",
+        "name": "Weekender Travel Duffel",
+        "category": "duffel bag",
+        "price_range": 72,
+        "ideal_for": ["weekend trips"],
+        "features": ["spacious"],
+        "description": "A reliable duffel.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p82",
+        "name": "UrbanShield Compact Backpack",
+        "category": "backpack",
+        "price_range": 36,
+        "ideal_for": ["city travel"],
+        "features": ["compact"],
+        "description": "A city-friendly backpack.",
+        "use_cases": ["city"]
+    },
+    {
+        "id": "p83",
+        "name": "SkyRoll Travel Case",
+        "category": "suitcase",
+        "price_range": 109,
+        "ideal_for": ["flights"],
+        "features": ["spinner wheels"],
+        "description": "A smooth travel case.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p84",
+        "name": "TrailLite Adventure Pack",
+        "category": "backpack",
+        "price_range": 88,
+        "ideal_for": ["hiking"],
+        "features": ["durable"],
+        "description": "A reliable hiking pack.",
+        "use_cases": ["hiking"]
+    },
+    {
+        "id": "p85",
+        "name": "TravelMate Organizer",
+        "category": "travel accessory",
+        "price_range": 20,
+        "ideal_for": ["travelers"],
+        "features": ["compact"],
+        "description": "A simple organizer.",
+        "use_cases": ["packing"]
+    },
+
+    {
+        "id": "p86",
+        "name": "FlexCarry Travel Duffel",
+        "category": "duffel bag",
+        "price_range": 29,
+        "ideal_for": ["short trips"],
+        "features": ["lightweight"],
+        "description": "A basic travel duffel.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p87",
+        "name": "SecurePro Backpack",
+        "category": "backpack",
+        "price_range": 94,
+        "ideal_for": ["urban travel"],
+        "features": ["anti-theft"],
+        "description": "A secure everyday backpack.",
+        "use_cases": ["city"]
+    },
+    {
+        "id": "p88",
+        "name": "JetLite Travel Suitcase",
+        "category": "suitcase",
+        "price_range": 103,
+        "ideal_for": ["travel"],
+        "features": ["lightweight"],
+        "description": "A light suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p89",
+        "name": "TrailMax Compact Pack",
+        "category": "backpack",
+        "price_range": 32,
+        "ideal_for": ["day travel"],
+        "features": ["compact"],
+        "description": "A compact backpack.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p90",
+        "name": "ComfortRest Pro Pillow",
+        "category": "travel accessory",
+        "price_range": 52,
+        "ideal_for": ["long trips"],
+        "features": ["memory foam"],
+        "description": "A premium pillow.",
+        "use_cases": ["rest"]
+    },
+
+    {
+        "id": "p91",
+        "name": "UrbanFlex Day Backpack",
+        "category": "backpack",
+        "price_range": 34,
+        "ideal_for": ["daily use"],
+        "features": ["lightweight"],
+        "description": "A simple day backpack.",
+        "use_cases": ["daily"]
+    },
+    {
+        "id": "p92",
+        "name": "SkyCarry Cabin Suitcase",
+        "category": "suitcase",
+        "price_range": 101,
+        "ideal_for": ["short trips"],
+        "features": ["compact"],
+        "description": "A cabin suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p93",
+        "name": "TrailPro Hiking Backpack",
+        "category": "backpack",
+        "price_range": 185,
+        "ideal_for": ["trekking"],
+        "features": ["durable"],
+        "description": "A strong hiking backpack.",
+        "use_cases": ["hiking"]
+    },
+    {
+        "id": "p94",
+        "name": "PackSmart Organizer Kit",
+        "category": "travel accessory",
+        "price_range": 24,
+        "ideal_for": ["organized packing"],
+        "features": ["multi-pocket"],
+        "description": "A packing kit.",
+        "use_cases": ["packing"]
+    },
+    {
+        "id": "p95",
+        "name": "Weekender Lite Duffel",
+        "category": "duffel bag",
+        "price_range": 28,
+        "ideal_for": ["weekend trips"],
+        "features": ["lightweight"],
+        "description": "A lightweight duffel.",
+        "use_cases": ["travel"]
+    },
+
+    {
+        "id": "p96",
+        "name": "AirComfort Lite Pillow",
+        "category": "travel accessory",
+        "price_range": 19,
+        "ideal_for": ["travelers"],
+        "features": ["soft"],
+        "description": "A soft pillow.",
+        "use_cases": ["rest"]
+    },
+    {
+        "id": "p97",
+        "name": "MetroPack Laptop Backpack",
+        "category": "backpack",
+        "price_range": 86,
+        "ideal_for": ["students"],
+        "features": ["laptop sleeve"],
+        "description": "A student-friendly backpack.",
+        "use_cases": ["college"]
+    },
+    {
+        "id": "p98",
+        "name": "JetPro Travel Suitcase",
+        "category": "suitcase",
+        "price_range": 270,
+        "ideal_for": ["international travel"],
+        "features": ["durable"],
+        "description": "A premium suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p99",
+        "name": "TrailLite Urban Pack",
+        "category": "backpack",
+        "price_range": 30,
+        "ideal_for": ["city travel"],
+        "features": ["compact"],
+        "description": "A small urban backpack.",
+        "use_cases": ["city"]
+    },
+    {
+        "id": "p100",
+        "name": "PackEase Travel Organizer",
+        "category": "travel accessory",
+        "price_range": 22,
+        "ideal_for": ["travelers"],
+        "features": ["compact"],
+        "description": "A travel organizer.",
+        "use_cases": ["packing"]
+    },
+
+    {
+        "id": "p101",
+        "name": "FlexDuff Travel Bag Pro",
+        "category": "duffel bag",
+        "price_range": 78,
+        "ideal_for": ["travel"],
+        "features": ["durable"],
+        "description": "A durable duffel.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p102",
+        "name": "SecureLite Urban Backpack",
+        "category": "backpack",
+        "price_range": 90,
+        "ideal_for": ["city travel"],
+        "features": ["anti-theft"],
+        "description": "A safe backpack.",
+        "use_cases": ["city"]
+    },
+    {
+        "id": "p103",
+        "name": "SkyLite Cabin Roller",
+        "category": "suitcase",
+        "price_range": 106,
+        "ideal_for": ["short trips"],
+        "features": ["spinner wheels"],
+        "description": "A rolling suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p104",
+        "name": "TrailGo Adventure Backpack",
+        "category": "backpack",
+        "price_range": 93,
+        "ideal_for": ["outdoor travel"],
+        "features": ["durable"],
+        "description": "An outdoor backpack.",
+        "use_cases": ["adventure"]
+    },
+    {
+        "id": "p105",
+        "name": "TravelMate Packing Kit",
+        "category": "travel accessory",
+        "price_range": 23,
+        "ideal_for": ["packing"],
+        "features": ["multi-pocket"],
+        "description": "A packing kit.",
+        "use_cases": ["packing"]
+    },
+
+    {
+        "id": "p106",
+        "name": "Weekender Pro Duffel",
+        "category": "duffel bag",
+        "price_range": 85,
+        "ideal_for": ["weekend travel"],
+        "features": ["spacious"],
+        "description": "A premium duffel.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p107",
+        "name": "UrbanLite Slim Backpack",
+        "category": "backpack",
+        "price_range": 35,
+        "ideal_for": ["daily commute"],
+        "features": ["slim design"],
+        "description": "A slim backpack.",
+        "use_cases": ["commute"]
+    },
+    {
+        "id": "p108",
+        "name": "JetCarry Pro Suitcase",
+        "category": "suitcase",
+        "price_range": 260,
+        "ideal_for": ["business travel"],
+        "features": ["premium build"],
+        "description": "A business suitcase.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p109",
+        "name": "TrailLite Compact Backpack",
+        "category": "backpack",
+        "price_range": 31,
+        "ideal_for": ["light travel"],
+        "features": ["compact"],
+        "description": "A lightweight backpack.",
+        "use_cases": ["travel"]
+    },
+    {
+        "id": "p110",
+        "name": "ComfortPlus Travel Pillow Pro",
+        "category": "travel accessory",
+        "price_range": 60,
+        "ideal_for": ["frequent travelers"],
+        "features": ["memory foam"],
+        "description": "A premium travel pillow.",
+        "use_cases": ["rest"]
     }
 ]

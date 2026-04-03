@@ -88,6 +88,781 @@
         "id": "f15",
         "question": "What travel accessories help during long flights?",
         "answer": "Accessories like the AirFold Travel Pillow help improve comfort during long flights."
-    }
+    },
+    {
+        "id": "f16",
+        "question": "Which backpack is best for daily commuting?",
+        "answer": "Backpacks like UrbanLite Daypack and UrbanPack Daily Backpack are ideal for daily commuting due to their lightweight design."
+    },
+    {
+        "id": "f17",
+        "question": "Do you offer foldable travel bags?",
+        "answer": "Yes, products like LiteCarry Foldable Backpack and Weekender Fold Duffel are designed to fold easily for storage."
+    },
+    {
+        "id": "f18",
+        "question": "Which bag is best for hiking trips?",
+        "answer": "Backpacks like TrailLite Hiking Pack and TrailPro Hiking Backpack are built specifically for hiking and outdoor adventures."
+    },
+    {
+        "id": "f19",
+        "question": "Are your duffel bags suitable for gym use?",
+        "answer": "Yes, bags like FlexCarry Duffel and FlexPack Expandable Duffel are perfect for gym and short trips."
+    },
+    {
+        "id": "f20",
+        "question": "Do your backpacks have USB charging ports?",
+        "answer": "Some models like ProTech Laptop Backpack and UrbanFlex Laptop Backpack include USB charging ports."
+    },
 
+    {
+        "id": "f21",
+        "question": "Which suitcase is best for long trips?",
+        "answer": "Suitcases like GlobeRoll Expand Suitcase and SkyTravel Pro Suitcase are ideal for long trips."
+    },
+    {
+        "id": "f22",
+        "question": "Are your travel pillows comfortable for long flights?",
+        "answer": "Yes, products like AirComfort Pro Pillow and ComfortPlus Travel Pillow Pro provide ergonomic support."
+    },
+    {
+        "id": "f23",
+        "question": "Do your backpacks have anti-theft features?",
+        "answer": "Yes, models like SmartCarry Anti-Theft Backpack and SecureLite Backpack include anti-theft features."
+    },
+    {
+        "id": "f24",
+        "question": "Can I use your duffel bags for weekend trips?",
+        "answer": "Yes, bags like Weekender Classic Duffel and Weekender Travel Duffel are ideal for weekend travel."
+    },
+    {
+        "id": "f25",
+        "question": "Do your suitcases have expandable storage?",
+        "answer": "Yes, many suitcases like Voyager Pro Carry-On and SkyLite Travel Suitcase offer expandable storage."
+    },
+
+    {
+        "id": "f26",
+        "question": "Are your backpacks suitable for students?",
+        "answer": "Yes, backpacks like UrbanLite Daypack and MetroPack Laptop Backpack are great for students."
+    },
+    {
+        "id": "f27",
+        "question": "Do your travel accessories help with organization?",
+        "answer": "Yes, products like PackSmart Cube Set and TravelMate Organizer help keep luggage organized."
+    },
+    {
+        "id": "f28",
+        "question": "Which bag is best for business travel?",
+        "answer": "ExecuCarry Business Backpack and JetCarry Pro Suitcase are ideal for business professionals."
+    },
+    {
+        "id": "f29",
+        "question": "Do your backpacks support hydration systems?",
+        "answer": "Yes, some outdoor backpacks like TrailLite Hiking Pack support hydration systems."
+    },
+    {
+        "id": "f30",
+        "question": "Are your suitcases lightweight?",
+        "answer": "Yes, options like JetLite Cabin Suitcase and LiteRoll Cabin Case are designed to be lightweight."
+    },
+
+    {
+        "id": "f31",
+        "question": "Can I carry a laptop in your backpacks?",
+        "answer": "Yes, many backpacks like ProTech Laptop Backpack include padded laptop compartments."
+    },
+    {
+        "id": "f32",
+        "question": "Do your duffel bags have shoe compartments?",
+        "answer": "Some models like FlexPack Expandable Duffel include dedicated shoe compartments."
+    },
+    {
+        "id": "f33",
+        "question": "Which product is best for minimal packing?",
+        "answer": "LiteCarry Foldable Backpack and PackLite Organizer are great for minimal travel."
+    },
+    {
+        "id": "f34",
+        "question": "Are your travel organizers waterproof?",
+        "answer": "Many organizers like PackEase Toiletry Organizer include waterproof lining."
+    },
+    {
+        "id": "f35",
+        "question": "Do your suitcases have scratch-resistant surfaces?",
+        "answer": "Yes, suitcases like UltraLite Cabin Suitcase feature scratch-resistant materials."
+    },
+
+    {
+        "id": "f36",
+        "question": "What is the best bag for short business trips?",
+        "answer": "Voyager Pro Carry-On and JetSet Laptop Travel Bag are excellent for short business trips."
+    },
+    {
+        "id": "f37",
+        "question": "Are your backpacks comfortable for long wear?",
+        "answer": "Yes, most backpacks include ergonomic straps for comfort."
+    },
+    {
+        "id": "f38",
+        "question": "Do you have travel gear for outdoor adventures?",
+        "answer": "Yes, products like TrailMax Adventure Pack and StormGuard Waterproof Duffel are built for outdoor travel."
+    },
+    {
+        "id": "f39",
+        "question": "Which products are best for organized packing?",
+        "answer": "Packing cubes like FlexiPack Compression Cubes and ZipCube Packing Set are ideal."
+    },
+    {
+        "id": "f40",
+        "question": "Are your travel pillows easy to carry?",
+        "answer": "Yes, most travel pillows like AirFold Travel Pillow are compact and portable."
+    },
+
+    {
+        "id": "f41",
+        "question": "Do your backpacks come in different sizes?",
+        "answer": "Yes, backpacks range from compact daypacks to large hiking packs."
+    },
+    {
+        "id": "f42",
+        "question": "Are your bags suitable for international flights?",
+        "answer": "Yes, many suitcases and backpacks are designed for international travel."
+    },
+    {
+        "id": "f43",
+        "question": "Which bag is best for weekend travel?",
+        "answer": "Weekender Classic Duffel and CityRoll Cabin Suitcase are great options."
+    },
+    {
+        "id": "f44",
+        "question": "Do your backpacks have water bottle holders?",
+        "answer": "Many backpacks include side pockets for water bottles."
+    },
+    {
+        "id": "f45",
+        "question": "Are your suitcases easy to maneuver?",
+        "answer": "Yes, most suitcases include 360-degree spinner wheels."
+    },
+
+    {
+        "id": "f46",
+        "question": "Do you offer travel accessories for comfort?",
+        "answer": "Yes, products like travel pillows and blankets enhance comfort."
+    },
+    {
+        "id": "f47",
+        "question": "Which backpack is best for city travel?",
+        "answer": "RoamSafe Anti-Theft Backpack and CityEdge Sling Backpack are ideal."
+    },
+    {
+        "id": "f48",
+        "question": "Do your products include smart features?",
+        "answer": "Yes, VoyageMax Smart Suitcase includes USB charging and GPS tracking."
+    },
+    {
+        "id": "f49",
+        "question": "Are your bags suitable for both work and travel?",
+        "answer": "Yes, many backpacks are designed for both professional and travel use."
+    },
+    {
+        "id": "f50",
+        "question": "Which suitcase is best for carry-on travel?",
+        "answer": "UltraLite Cabin Suitcase and JetLite Cabin Suitcase are ideal."
+    },
+
+    {
+        "id": "f51",
+        "question": "Do your backpacks have multiple compartments?",
+        "answer": "Yes, most backpacks include multiple compartments for organization."
+    },
+    {
+        "id": "f52",
+        "question": "Are your duffel bags lightweight?",
+        "answer": "Yes, many duffel bags are made with lightweight materials."
+    },
+    {
+        "id": "f53",
+        "question": "Do your suitcases come with locks?",
+        "answer": "Yes, many include TSA-approved locks."
+    },
+    {
+        "id": "f54",
+        "question": "Which bag is best for gym use?",
+        "answer": "FlexCarry Duffel and FlexPack Expandable Duffel are great options."
+    },
+    {
+        "id": "f55",
+        "question": "Are your travel organizers durable?",
+        "answer": "Yes, they are made from durable materials for long-term use."
+    },
+
+    {
+        "id": "f56",
+        "question": "Do your backpacks support tech gadgets?",
+        "answer": "Yes, many backpacks include compartments for gadgets and accessories."
+    },
+    {
+        "id": "f57",
+        "question": "Are your suitcases expandable?",
+        "answer": "Yes, many suitcases offer expandable storage."
+    },
+    {
+        "id": "f58",
+        "question": "Which products are best for family travel?",
+        "answer": "SkyLite Travel Suitcase and GlobeRoll Expand Suitcase are great for family trips."
+    },
+    {
+        "id": "f59",
+        "question": "Do your bags have ergonomic designs?",
+        "answer": "Yes, many backpacks include ergonomic straps for comfort."
+    },
+    {
+        "id": "f60",
+        "question": "Are your travel accessories compact?",
+        "answer": "Yes, most accessories are designed to be compact and portable."
+    },
+
+    {
+        "id": "f61",
+        "question": "Which backpack is best for light travel?",
+        "answer": "LiteCarry Foldable Backpack and TrailLite Mini Pack are ideal."
+    },
+    {
+        "id": "f62",
+        "question": "Do your products support organized packing?",
+        "answer": "Yes, packing cubes and organizers help maintain order."
+    },
+    {
+        "id": "f63",
+        "question": "Are your suitcases durable?",
+        "answer": "Yes, they are built with strong materials for travel durability."
+    },
+    {
+        "id": "f64",
+        "question": "Which bag is best for long journeys?",
+        "answer": "GlobeTrek Pro Suitcase and SkyTravel Pro Suitcase are excellent choices."
+    },
+    {
+        "id": "f65",
+        "question": "Do your backpacks have anti-theft zippers?",
+        "answer": "Yes, some models include hidden or anti-theft zippers."
+    },
+
+    {
+        "id": "f66",
+        "question": "Are your duffel bags suitable for outdoor travel?",
+        "answer": "Yes, options like StormGuard Waterproof Duffel are designed for outdoor use."
+    },
+    {
+        "id": "f67",
+        "question": "Which products are best for comfort during travel?",
+        "answer": "Travel pillows and blankets provide added comfort."
+    },
+    {
+        "id": "f68",
+        "question": "Do your backpacks have padded straps?",
+        "answer": "Yes, most backpacks include padded straps for comfort."
+    },
+    {
+        "id": "f69",
+        "question": "Are your travel products easy to maintain?",
+        "answer": "Yes, most products are made with easy-to-clean materials."
+    },
+    {
+        "id": "f70",
+        "question": "Which suitcase is best for smooth rolling?",
+        "answer": "Suitcases with spinner wheels like GlidePro Spinner Suitcase are ideal."
+    },
+
+    {
+        "id": "f71",
+        "question": "Do your backpacks fit under airplane seats?",
+        "answer": "Some compact backpacks are designed to fit under seats."
+    },
+    {
+        "id": "f72",
+        "question": "Are your travel accessories lightweight?",
+        "answer": "Yes, they are designed to be lightweight and portable."
+    },
+    {
+        "id": "f73",
+        "question": "Which bag is best for short trips?",
+        "answer": "CityRoll Cabin Suitcase and Weekender Duffel are great options."
+    },
+    {
+        "id": "f74",
+        "question": "Do your suitcases have reinforced corners?",
+        "answer": "Many premium suitcases include reinforced edges for durability."
+    },
+    {
+        "id": "f75",
+        "question": "Are your backpacks stylish for everyday use?",
+        "answer": "Yes, many designs are both functional and stylish."
+    },
+
+    {
+        "id": "f76",
+        "question": "Do your products include warranty support?",
+        "answer": "Most products come with manufacturer warranty support."
+    },
+    {
+        "id": "f77",
+        "question": "Which bag is best for remote workers?",
+        "answer": "JetSet Laptop Travel Bag and ProTech Laptop Backpack are ideal."
+    },
+    {
+        "id": "f78",
+        "question": "Are your travel bags airline compliant?",
+        "answer": "Yes, many are designed to meet airline standards."
+    },
+    {
+        "id": "f79",
+        "question": "Do your backpacks include USB ports?",
+        "answer": "Some models include USB charging ports."
+    },
+    {
+        "id": "f80",
+        "question": "Which products are best for minimal luggage?",
+        "answer": "UltraLite Cabin Suitcase and LiteCarry Foldable Backpack are ideal."
+    },
+
+    {
+        "id": "f81",
+        "question": "Are your travel pillows washable?",
+        "answer": "Most pillows come with removable, washable covers."
+    },
+    {
+        "id": "f82",
+        "question": "Do your backpacks support heavy loads?",
+        "answer": "Yes, many backpacks are designed with reinforced stitching."
+    },
+    {
+        "id": "f83",
+        "question": "Which bag is best for adventure travel?",
+        "answer": "TrailMax Adventure Pack and StormGuard Duffel are great."
+    },
+    {
+        "id": "f84",
+        "question": "Are your suitcases suitable for rough handling?",
+        "answer": "Yes, hard-shell suitcases are built for durability."
+    },
+    {
+        "id": "f85",
+        "question": "Do your products help save packing space?",
+        "answer": "Yes, compression cubes help maximize space."
+    },
+
+    {
+        "id": "f86",
+        "question": "Are your backpacks water-resistant?",
+        "answer": "Most backpacks offer water-resistant protection."
+    },
+    {
+        "id": "f87",
+        "question": "Do your duffel bags have shoulder straps?",
+        "answer": "Yes, most include adjustable shoulder straps."
+    },
+    {
+        "id": "f88",
+        "question": "Which suitcase is best for business trips?",
+        "answer": "JetCarry Pro Suitcase and Voyager Pro Carry-On are ideal."
+    },
+    {
+        "id": "f89",
+        "question": "Are your travel organizers easy to use?",
+        "answer": "Yes, they are designed for simple and efficient packing."
+    },
+    {
+        "id": "f90",
+        "question": "Do your products come in different colors?",
+        "answer": "Yes, many products are available in multiple color options."
+    },
+
+    {
+        "id": "f91",
+        "question": "Which backpack is best for school?",
+        "answer": "MetroPack Laptop Backpack and UrbanLite Daypack are great choices."
+    },
+    {
+        "id": "f92",
+        "question": "Are your suitcases secure?",
+        "answer": "Yes, many include TSA locks and secure zippers."
+    },
+    {
+        "id": "f93",
+        "question": "Do your bags support organized travel?",
+        "answer": "Yes, multiple compartments and organizers help."
+    },
+    {
+        "id": "f94",
+        "question": "Which bag is best for short vacations?",
+        "answer": "UltraLite Cabin Suitcase is a great option."
+    },
+    {
+        "id": "f95",
+        "question": "Are your products suitable for daily use?",
+        "answer": "Yes, many products are designed for daily and travel use."
+    },
+
+    {
+        "id": "f96",
+        "question": "Do your backpacks include rain covers?",
+        "answer": "Some hiking backpacks include rain covers."
+    },
+    {
+        "id": "f97",
+        "question": "Which products are best for comfort?",
+        "answer": "Travel pillows and ergonomic backpacks are ideal."
+    },
+    {
+        "id": "f98",
+        "question": "Are your suitcases lightweight and durable?",
+        "answer": "Yes, they balance lightweight design with durability."
+    },
+    {
+        "id": "f99",
+        "question": "Do your bags have ventilation features?",
+        "answer": "Some backpacks include breathable back panels."
+    },
+    {
+        "id": "f100",
+        "question": "Which bag is best for commuting?",
+        "answer": "UrbanLite Daypack and UrbanFlex Backpack are ideal."
+    },
+
+    {
+        "id": "f101",
+        "question": "Are your travel accessories multi-functional?",
+        "answer": "Yes, many accessories serve multiple purposes."
+    },
+    {
+        "id": "f102",
+        "question": "Do your suitcases have silent wheels?",
+        "answer": "Many premium suitcases include smooth, silent wheels."
+    },
+    {
+        "id": "f103",
+        "question": "Which backpack is best for professionals?",
+        "answer": "ExecuCarry Business Backpack is a great option."
+    },
+    {
+        "id": "f104",
+        "question": "Are your duffel bags durable?",
+        "answer": "Yes, they are made with strong materials."
+    },
+    {
+        "id": "f105",
+        "question": "Do your products support frequent travel?",
+        "answer": "Yes, they are built for frequent use."
+    },
+
+    {
+        "id": "f106",
+        "question": "Which suitcase is best for international travel?",
+        "answer": "GlobeTrek Pro Suitcase and SkyTravel Pro Suitcase are ideal."
+    },
+    {
+        "id": "f107",
+        "question": "Are your backpacks compact?",
+        "answer": "Yes, many models are compact and easy to carry."
+    },
+    {
+        "id": "f108",
+        "question": "Do your products help with organization?",
+        "answer": "Yes, organizers and compartments help maintain order."
+    },
+    {
+        "id": "f109",
+        "question": "Which travel accessory is most useful?",
+        "answer": "Packing cubes and travel pillows are very useful."
+    },
+    {
+        "id": "f110",
+        "question": "Are your bags suitable for all ages?",
+        "answer": "Yes, they are designed for a wide range of users."
+    },
+
+    {
+        "id": "f111",
+        "question": "Do your backpacks support heavy packing?",
+        "answer": "Yes, reinforced stitching supports heavy loads."
+    },
+    {
+        "id": "f112",
+        "question": "Which suitcase is best for frequent flyers?",
+        "answer": "Voyager Pro Carry-On is a great option."
+    },
+    {
+        "id": "f113",
+        "question": "Are your travel pillows compact?",
+        "answer": "Yes, they are designed to be easy to carry."
+    },
+    {
+        "id": "f114",
+        "question": "Do your bags have secure compartments?",
+        "answer": "Yes, many include secure and hidden compartments."
+    },
+    {
+        "id": "f115",
+        "question": "Which bag is best for city commuting?",
+        "answer": "CityEdge Sling Backpack is ideal."
+    },
+
+    {
+        "id": "f116",
+        "question": "Are your suitcases stylish?",
+        "answer": "Yes, they combine style with functionality."
+    },
+    {
+        "id": "f117",
+        "question": "Do your backpacks have breathable designs?",
+        "answer": "Yes, many include breathable back panels."
+    },
+    {
+        "id": "f118",
+        "question": "Which product is best for comfort?",
+        "answer": "Travel pillows provide maximum comfort."
+    },
+    {
+        "id": "f119",
+        "question": "Are your bags suitable for outdoor use?",
+        "answer": "Yes, many are designed for outdoor conditions."
+    },
+    {
+        "id": "f120",
+        "question": "Do your products include smart features?",
+        "answer": "Yes, some include USB and GPS features."
+    },
+
+    {
+        "id": "f121",
+        "question": "Which bag is best for quick trips?",
+        "answer": "QuickTrip Mini Backpack is ideal."
+    },
+    {
+        "id": "f122",
+        "question": "Are your travel accessories easy to store?",
+        "answer": "Yes, most are compact and foldable."
+    },
+    {
+        "id": "f123",
+        "question": "Do your backpacks support laptops?",
+        "answer": "Yes, many include laptop compartments."
+    },
+    {
+        "id": "f124",
+        "question": "Which suitcase is best for durability?",
+        "answer": "GlobeTrek Pro Suitcase is very durable."
+    },
+    {
+        "id": "f125",
+        "question": "Are your duffel bags spacious?",
+        "answer": "Yes, they provide ample storage space."
+    },
+
+    {
+        "id": "f126",
+        "question": "Do your products support efficient packing?",
+        "answer": "Yes, organizers and compartments help."
+    },
+    {
+        "id": "f127",
+        "question": "Which backpack is best for travel?",
+        "answer": "NomadLite Carry-On Backpack is a great option."
+    },
+    {
+        "id": "f128",
+        "question": "Are your suitcases easy to handle?",
+        "answer": "Yes, they include ergonomic handles."
+    },
+    {
+        "id": "f129",
+        "question": "Do your bags include multiple compartments?",
+        "answer": "Yes, most bags are designed for organization."
+    },
+    {
+        "id": "f130",
+        "question": "Which product is best for comfort during flights?",
+        "answer": "AirFold Travel Pillow is ideal."
+    },
+
+    {
+        "id": "f131",
+        "question": "Are your backpacks durable?",
+        "answer": "Yes, they are made with high-quality materials."
+    },
+    {
+        "id": "f132",
+        "question": "Do your products support organized travel?",
+        "answer": "Yes, they are designed for efficient packing."
+    },
+    {
+        "id": "f133",
+        "question": "Which suitcase is best for carry-on?",
+        "answer": "UltraLite Cabin Suitcase is ideal."
+    },
+    {
+        "id": "f134",
+        "question": "Are your bags suitable for long journeys?",
+        "answer": "Yes, many are built for long travel."
+    },
+    {
+        "id": "f135",
+        "question": "Do your products offer comfort features?",
+        "answer": "Yes, ergonomic designs improve comfort."
+    },
+
+    {
+        "id": "f136",
+        "question": "Which bag is best for organized packing?",
+        "answer": "PackCube Organizer Set is ideal."
+    },
+    {
+        "id": "f137",
+        "question": "Are your travel accessories lightweight?",
+        "answer": "Yes, they are designed for portability."
+    },
+    {
+        "id": "f138",
+        "question": "Do your backpacks have security features?",
+        "answer": "Yes, many include anti-theft features."
+    },
+    {
+        "id": "f139",
+        "question": "Which suitcase is best for business use?",
+        "answer": "VoyageMax Smart Suitcase is ideal."
+    },
+    {
+        "id": "f140",
+        "question": "Are your products versatile?",
+        "answer": "Yes, many products serve multiple purposes."
+    },
+
+    {
+        "id": "f141",
+        "question": "Do your bags support frequent use?",
+        "answer": "Yes, they are built for durability."
+    },
+    {
+        "id": "f142",
+        "question": "Which backpack is best for outdoor trips?",
+        "answer": "TrailMate Hiking Backpack is ideal."
+    },
+    {
+        "id": "f143",
+        "question": "Are your suitcases travel-friendly?",
+        "answer": "Yes, they are designed for easy travel."
+    },
+    {
+        "id": "f144",
+        "question": "Do your products include comfort features?",
+        "answer": "Yes, many products focus on comfort."
+    },
+    {
+        "id": "f145",
+        "question": "Which bag is best for daily use?",
+        "answer": "UrbanLite Daypack is ideal."
+    },
+
+    {
+        "id": "f146",
+        "question": "Are your backpacks suitable for all-day use?",
+        "answer": "Yes, ergonomic designs support long usage."
+    },
+    {
+        "id": "f147",
+        "question": "Do your travel accessories improve travel experience?",
+        "answer": "Yes, they enhance comfort and organization."
+    },
+    {
+        "id": "f148",
+        "question": "Which suitcase is best for smooth travel?",
+        "answer": "GlidePro Spinner Suitcase is ideal."
+    },
+    {
+        "id": "f149",
+        "question": "Are your bags easy to carry?",
+        "answer": "Yes, they include ergonomic handles and straps."
+    },
+    {
+        "id": "f150",
+        "question": "Which products are best for lightweight travel?",
+        "answer": "UltraLite Cabin Suitcase and LiteCarry Foldable Backpack are ideal."
+    },
+    {
+        "id": "f151",
+        "question": "Do your backpacks support remote work needs?",
+        "answer": "Yes, backpacks like JetSet Laptop Travel Bag are designed for remote work."
+    },
+    {
+        "id": "f152",
+        "question": "Are your travel bags suitable for flights?",
+        "answer": "Yes, many products are designed to meet airline requirements."
+    },
+    {
+        "id": "f153",
+        "question": "Do your products include smart features?",
+        "answer": "Yes, products like VoyageMax Smart Suitcase include smart features."
+    },
+    {
+        "id": "f154",
+        "question": "Which product is best for long-distance travel?",
+        "answer": "GlobeTrek Pro Suitcase is ideal."
+    },
+    {
+        "id": "f155",
+        "question": "Do your backpacks have multiple compartments?",
+        "answer": "Yes, most backpacks include multiple compartments."
+    },
+    {
+        "id": "f156",
+        "question": "Are your duffel bags easy to carry?",
+        "answer": "Yes, they include shoulder straps."
+    },
+    {
+        "id": "f157",
+        "question": "Which travel accessory is best for comfort?",
+        "answer": "Travel pillows like ComfortRest Neck Pillow are ideal."
+    },
+    {
+        "id": "f158",
+        "question": "Do your suitcases roll smoothly?",
+        "answer": "Yes, they include spinner wheels."
+    },
+    {
+        "id": "f159",
+        "question": "Are your travel products durable?",
+        "answer": "Yes, they are built with durable materials."
+    },
+    {
+        "id": "f160",
+        "question": "Can I use your backpacks for school and travel?",
+        "answer": "Yes, they are versatile for both uses."
+    },
+    {
+        "id": "f161",
+        "question": "Do you offer compact travel gear?",
+        "answer": "Yes, many products are compact."
+    },
+    {
+        "id": "f162",
+        "question": "Are your bags suitable for international flights?",
+        "answer": "Yes, they are designed for global travel."
+    },
+    {
+        "id": "f163",
+        "question": "Do your products support organized packing?",
+        "answer": "Yes, organizers help maintain order."
+    },
+    {
+        "id": "f164",
+        "question": "Which product is best for city travel?",
+        "answer": "RoamSafe Anti-Theft Backpack is ideal."
+    },
+    {
+        "id": "f165",
+        "question": "Do your travel bags offer security features?",
+        "answer": "Yes, many include anti-theft and RFID protection."
+    }
 ]
